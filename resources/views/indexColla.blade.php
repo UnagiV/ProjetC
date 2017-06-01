@@ -29,8 +29,14 @@
 						<tr>
 							<td>{!! $collaborateur->Id_TCa !!}</td>
 							<td class="text-primary"><strong>{!! $collaborateur->Collaborateur_TCa !!}</strong></td>
-              <td class="text-primary"><strong>{!! $collaborateur->Date_In_TCa !!}</strong></td>
-              <td class="text-primary"><strong>{!! $collaborateur->Date_Out_TCa !!}</strong></td>
+              <td class="text-primary"><strong>{!! date('M j, Y H:i', strtotime($collaborateur->Date_In_TCa)) !!}</strong></td>
+              <td class="text-primary">
+                <strong>
+                   <?php if ($collaborateur->Date_Out_TCa == !null): ?>
+                  {{  date('M j, Y H:i', strtotime($collaborateur->Date_Out_TCa)) }}
+                  <?php endif; ?>
+                </strong>
+              </td>
               <td class="text-primary"><strong>{!! $collaborateur->Acces_TCa !!}</strong></td>
               <td class="text-primary"><strong>{!! $collaborateur->Responsable_TCa !!}</strong></td>
               <td class="text-primary"><strong>{!! $collaborateur->TR_TCa !!}</strong></td>

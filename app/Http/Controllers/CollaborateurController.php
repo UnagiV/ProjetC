@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Request;
+use Carbon\Carbon;
 
 use App\Http\Requests\CollaborateurCreateRequest;
  use App\Http\Requests\CollaborateurUpdateRequest;
@@ -12,6 +13,7 @@ use App\Repositories\CollaborateurRepository;
 // coucou petite perruche
 class CollaborateurController extends Controller
 {
+
     protected $collaborateurRepository;
 
     protected $nbrPerPage = 10;
@@ -29,6 +31,7 @@ class CollaborateurController extends Controller
     {
         $T_Collaborateurs = $this->collaborateurRepository->getPaginate($this->nbrPerPage);
         $links = $T_Collaborateurs->render();
+        
 
         return view('indexColla', compact('T_Collaborateurs', 'links'));
     }

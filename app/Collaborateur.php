@@ -16,7 +16,7 @@ class Collaborateur extends Model
 
     public $timestamps = false;
 
-    protected $dateFormat = "d-m-Y";
+    
 
     // public $dates = Carbon::createFromFormat('d-m-Y','31-05-2017');
 
