@@ -7,7 +7,7 @@
 			<div class="panel-heading">Fiche du collaborateur</div>
 			<div class="panel-body">
 				<p>Nom : {{ $collaborateur->Collaborateur_TCa }}</p>
-        <p>Date d'Entrée : {{ $collaborateur->Date_In_TCa }}</p>
+        <p>Date d'Entrée : {{ date('d-m-Y', strtotime($collaborateur->Date_In_TCa)) }}</p>
         <p>Date de Départ : {{ $collaborateur->Date_Out_TCa }}</p>
         <p>Accès : {{ $collaborateur->Acces_TCa }}</p>
         <p>Responsable : {{ $collaborateur->Responsable_TCa }}</p>

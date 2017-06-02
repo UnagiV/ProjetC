@@ -34,7 +34,6 @@
                 <strong>
                    <?php if ($collaborateur->Date_Out_TCa == !null): ?>
                   {{  date('d-m-Y', strtotime($collaborateur->Date_Out_TCa)) }}
-
                   <?php endif; ?>
                 </strong>
               </td>
