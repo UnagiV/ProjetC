@@ -29,11 +29,12 @@
 						<tr>
 							<td>{!! $collaborateur->Id_TCa !!}</td>
 							<td class="text-primary"><strong>{!! $collaborateur->Collaborateur_TCa !!}</strong></td>
-              <td class="text-primary"><strong>{!! date('M j, Y H:i', strtotime($collaborateur->Date_In_TCa)) !!}</strong></td>
+              <td class="text-primary"><strong>{!! date('d-m-Y', strtotime($collaborateur->Date_In_TCa)) !!}</strong></td>
               <td class="text-primary">
                 <strong>
                    <?php if ($collaborateur->Date_Out_TCa == !null): ?>
-                  {{  date('M j, Y H:i', strtotime($collaborateur->Date_Out_TCa)) }}
+                  {{  date('d-m-Y', strtotime($collaborateur->Date_Out_TCa)) }}
+
                   <?php endif; ?>
                 </strong>
               </td>
