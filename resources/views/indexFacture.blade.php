@@ -60,8 +60,8 @@
               <!-- <td class="text-primary"><strong>{!! $facture->Total_Trajet_HT_TFCl !!}</strong></td> -->
               <!-- <td class="text-primary"><strong>{!! $facture->Total_Depl_HT_TFCl !!}</strong></td> -->
               <td class="text-primary"><strong>{!! round($facture->Total_HT_TFCl,2 ) !!}</strong></td>
-              <td class="text-primary"><strong>{!! round($facture->Total_TVA_TFCl,2) !!}</strong></td>
-              <td class="text-primary"><strong>{!! round($facture->Total_TTC_TFCl,2) !!}</strong></td>
+              <td class="text-primary"><strong>{!! round($facture->Total_TVA_TFCl,2 ) !!}</strong></td>
+              <td class="text-primary"><strong>{!! round($facture->Total_TTC_TFCl,2 ) !!}</strong></td>
 
 							<td>{!! link_to_route('facture.show', 'Voir', [$facture->Id_TFCl], ['class' => 'btn btn-success btn-block']) !!}</td>
 							<td>{!! link_to_route('facture.edit', 'Modifier', [$facture->Id_TFCl], ['class' => 'btn btn-warning btn-block']) !!}</td>

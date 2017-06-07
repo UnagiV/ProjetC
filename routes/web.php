@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('collaborateur','CollaborateurController');
+Route::resource('facture','FactureController');
