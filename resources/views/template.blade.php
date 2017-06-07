@@ -14,6 +14,23 @@
 		<style> textarea { resize: none; } </style>
 	</head>
 	<body>
+
+		<table class="table">
+			<tbody>
+				<th>DashBord</th>
+				<th>Bon d'Intervention</th>
+				<th>Devis</th>
+				<th>Suivi de Chantier</th>
+				<th>Factures</th>
+				<th>Annuaire Clients</th>
+				<th>Fiche Collaborateurs</th>
+				<th>Stock</th>
+				<th>Recherche</th>
+			</tbody>
+
+		</table>
 		@yield('contenu')
 	</body>
+
+
 </html>
