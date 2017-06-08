@@ -42,12 +42,17 @@
 					</div>
 
 					<div class="form-group">
+<<<<<<< HEAD
 						<div class="checkbox">
 							<label>
 								{!! Form::checkbox('TR_TCa', 1, null) !!}Ticket Restaurant
 							</label>
 						</div>
 					</div>
+=======
+
+
+>>>>>>> master
 					{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>

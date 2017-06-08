@@ -91,6 +91,7 @@ class FactureController extends Controller
     public function update(Request $request, $Id_TFCl)
     {
         $this->factureRepository->update($Id_TFCl, $request::all());
+
         return redirect('facture')->withOk("la facture a été modifié.");
     }
 

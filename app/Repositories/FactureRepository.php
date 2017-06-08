@@ -36,7 +36,7 @@ class FactureRepository
     $facture->Send_TFCl = $inputs['Send_TFCl'];
     $facture->Cpt_TFCl = $inputs['Cpt_TFCl'];
     $facture->Paid_TFCl = $inputs['Paid_TFCl'];
-    $facture->Avoir_TFCl = $inputs['Avoir_TFCl'];
+    $facture->Avoir_TFCl = isset($inputs['Avoir_TFCl']);
     $facture->BlNote_TFCl = $inputs['BlNote_TFCl'];
     $facture->Total_MO_HT_TFCl = $inputs['Total_MO_HT_TFCl'];
     $facture->Total_Vente_HT_TFCl = $inputs['Total_Vente_HT_TFCl'];
@@ -77,5 +77,5 @@ class FactureRepository
   {
     $this->getById($Id_TFCl)->delete();
   }
-  
+
 }
