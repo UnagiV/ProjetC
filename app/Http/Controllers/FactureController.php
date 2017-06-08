@@ -10,7 +10,7 @@ class FactureController extends Controller
 {
     protected$factureRepository;
 
-    protected $nbrPerPage = 20;
+    protected $nbrPerPage = 15;
 
     public function __construct(FactureRepository $factureRepository)
     {
@@ -63,7 +63,7 @@ class FactureController extends Controller
      */
     public function show($Id_TFCl)
     {
-        $facture = $this->FactureRepository->getById($Id_TFCl);
+        $facture = $this->factureRepository->getById($Id_TFCl);
 
         return view ('showFacture', compact('facture'));
     }
@@ -76,7 +76,7 @@ class FactureController extends Controller
      */
     public function edit($Id_TFCl)
     {
-      $facture = $this->FactureRepository->getById($Id_TFCl);
+      $facture = $this->factureRepository->getById($Id_TFCl);
 
       return view ('editFacture', compact('facture'));
     }
@@ -91,6 +91,7 @@ class FactureController extends Controller
     public function update(Request $request, $Id_TFCl)
     {
         $this->factureRepository->update($Id_TFCl, $request::all());
+
         return redirect('facture')->withOk("la facture a été modifié.");
     }
 

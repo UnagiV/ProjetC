@@ -16,7 +16,7 @@ class CollaborateurRepository
 
 	private function save(Collaborateur $collaborateur, Array $inputs)
 	{
-    // $collaborateur->Id_TCa = $inputs['"Id_TCa"'];
+    
     $collaborateur->Collaborateur_TCa = $inputs['Collaborateur_TCa'];
     $collaborateur->Date_In_TCa = $inputs['Date_In_TCa'];
     $collaborateur->Date_Out_TCa = $inputs['Date_Out_TCa'];

@@ -16,7 +16,7 @@ class CreateTContactTable extends Migration {
 		{
 			$table->integer('Id_TCo', true);
 			$table->string('Ste_TCl')->nullable()->index('Ste_TCl');
-			$table->string('Entité_TCo')->nullable();
+			$table->string('Entite_TCo')->nullable();
 			$table->string('Adr_Liv_TCl')->nullable();
 			$table->string('Contact_TCo')->nullable();
 			$table->string('EMail_TCo')->nullable();

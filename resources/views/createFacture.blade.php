@@ -42,12 +42,8 @@
 					</div>
 
 					<div class="form-group">
-						<div class="checkbox">
-							<label>
-								{!! Form::checkbox('TR_TCa', 1, null) !!}Ticket Restaurant
-							</label>
-						</div>
-					</div>
+
+
 					{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>

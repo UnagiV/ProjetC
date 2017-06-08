@@ -4,7 +4,7 @@
 	<div class="col-sm-offset-4 col-sm-4">
 		<br>
 		<div class="panel panel-primary">
-			<div class="panel-heading">Création d'un utilisateur</div>
+			<div class="panel-heading">Création d'un Collaborateur</div>
 			<div class="panel-body">
 				<div class="col-sm-12">
 					{!! Form::open(['route' => 'collaborateur.store', 'class' => 'form-horizontal panel']) !!}
@@ -22,7 +22,15 @@
 
 					</div>
           <div class="form-group">
-					  	{!! Form::text('Acces_TCa', null, ['class' => 'form-control', 'placeholder' => 'Accès']) !!}
+
+							<select class="form-control" name="Acces_TCa">
+								<option selected="selected" disabled="disabled" hidden="hidden" value>Acces</option>
+								<option value="9999">9999</option>
+								<option value="9000">9000</option>
+								<option value="4000">4000</option>
+								<option value="1000">1000</option>
+							</select>
+							{!! $errors->first('Acces_TCa', '<small class="help-block">:message</small>') !!}
 
 					</div>
           <!-- <div class="form-group"> -->
