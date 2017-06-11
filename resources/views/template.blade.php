@@ -17,15 +17,18 @@
 
 		<table class="table">
 			<tbody>
-				<th>DashBord</th>
-				<th>Bon d'Intervention</th>
-				<th>Devis</th>
-				<th>Suivi de Chantier</th>
-				<th>Factures</th>
-				<th>Annuaire Clients</th>
-				<th>Fiche Collaborateurs</th>
-				<th>Stock</th>
-				<th>Recherche</th>
+				<button class="btn btn-primary" type="button">DashBord</button>
+				<button class="btn btn-primary" type="button">Bon d'Intervention</button>
+				<button class="btn btn-primary" type="button">Devis</button>
+				<button class="btn btn-primary" type="button">Suivi de Chantier</button>
+				<button class="btn btn-primary" type="button">Factures</button>
+				<button class="btn btn-primary" type="button">Annuaire Clients</button>
+				<button class="btn btn-primary" type="button">Fiche Collaborateurs</button>
+				<button class="btn btn-primary" type="button">Stock</button>
+				<button class="btn btn-primary" type="button">Recherche</button>
+
+				
+
 			</tbody>
 
 		</table>

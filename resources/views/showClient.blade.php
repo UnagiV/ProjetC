@@ -17,18 +17,17 @@
         <p>Date de Reglement : {{ date('d-m-Y', strtotime($facture->Paid_TFCl)) }}</p>
         <p>Avoir : {{ $facture->Avoir_TFCl }}</p>
         <p>Note : {{ $facture->BlNote_TFCl }}</p>
-        <p>Total Main d'Oeuvre HT : {{round($facture->Total_MO_HT_TFCl,2) }} €</p>
-        <p>Total Vente HT : {{round($facture->Total_Vente_HT_TFCl,2) }} €</p>
-        <p>Total Trajet HT : {{round($facture->Total_Trajet_HT_TFCl,2) }} €</p>
-        <p>Total Deplacement HT : {{round($facture->Total_Depl_HT_TFCl,2) }} €</p>
-        <p>Total HT : {{round($facture->Total_HT_TFCl,2) }} €</p>
-        <p>Total TVA : {{round($facture->Total_TVA_TFCl,2) }} €</p>
-        <p>Total TTC : {{round($facture->Total_TTC_TFCl,2) }} €</p>
+        <p>Total Main d'Oeuvre HT : {{round($facture->Total_MO_HT_TFCl,2) }}€</p>
+        <p>Total Vente HT : {{round($facture->Total_Vente_HT_TFCl,2) }}€</p>
+        <p>Total Trajet HT : {{round($facture->Total_Trajet_HT_TFCl,2) }}€</p>
+        <p>Total Deplacement HT : {{round($facture->Total_Depl_HT_TFCl,2) }}€</p>
+        <p>Total HT : {{round($facture->Total_HT_TFCl,2) }}€</p>
+        <p>Total TVA : {{round($facture->Total_TVA_TFCl,2) }}€</p>
+        <p>Total TTC : {{round($facture->Total_TTC_TFCl,2) }}€</p>
   </div>
 		</div>
 		<a href="javascript:history.back()" class="btn btn-primary">
 			<span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
-		</a><hr>
+		</a>
 	</div>
-
 @endsection

@@ -16,4 +16,9 @@ class Client extends Model
     'Collec_TCl','Tarif_Elec','Tarif_Tech','Tarif_Autom','Tarif_Etude'];
 
     public $timestamps = false;
+
+    public function contacts()
+	{
+		return $this->belongsTo('Contact','Id_TCo');
+	}
 }

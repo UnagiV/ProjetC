@@ -28,7 +28,7 @@
 					  	<!-- {!! Form::text('Responsable_TCa', null, ['class' => 'form-control', 'placeholder' => 'Responsable']) !!} -->
 					  	<!-- {!! $errors->first('Responsable_TCa', '<small class="help-block">:message</small>') !!} -->
               <select class="form-control" name="Responsable_TCa">
-								<option selected="selected"  hidden="hidden" value>Responsable</option>
+								<option selected="selected"  hidden="hidden" value>{{ $collaborateur->Responsable_TCa }}</option>
 								<option value="Cédric Dupuis">Cédric Dupuis</option>
 								<option value="Bastien Jambon">Bastien Jambon</option>
 							</select>
@@ -37,7 +37,7 @@
 
 					<div class="form-group">
 						<div class="checkbox">
-							
+
 						</div>
 					</div>
 						{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}

@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Request;
-
+use App\Client;
 use App\Repositories\ClientRepository;
-// use App\Repositories\ContactRepository;
+use App\Repositories\ContactRepository;
 
 class ClientController extends Controller
 {
     protected $clientRepository;
-    // protected $contactRepository;
+    protected $contactRepository;
 
     protected $nbrPerPage = 15;
 
@@ -30,11 +30,13 @@ class ClientController extends Controller
      */
     public function index()
     {
+        // $T_Clients = Client::with('contacts')->get();
         $T_Clients = $this->clientRepository->getPaginate($this->nbrPerPage);
+        $T_Clients->load('contacts');
         $links = $T_Clients->render();
 
-        // $T_Contact = $this->contactRepository->getPaginate($this->nbrPerPage);
-        // $link = $T_Contact->render();
+        $T_Contact = $this->contactRepository;//->getPaginate($this->nbrPerPage);
+        $links = $T_Contact;
 
         return view('indexClient', compact('T_Clients','links'));
 

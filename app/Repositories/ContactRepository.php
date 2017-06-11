@@ -19,7 +19,7 @@ class ContactRepository
   private function save(Contact $contact, Array $inputs)
   {
     $contact->Ste_TCl = $inputs['Ste_TCl'];
-    $contact->Entité_TCo = $inputs['Entité_TCo'];
+    $contact->Entite_TCo = $inputs['Entite_TCo'];
     $contact->Adr_Liv_TCl = $inputs['Adr_Liv_TCl'];
     $contact->Contact_TCo = $inputs['Contact_TCo'];
     $contact->EMail_TCo = $inputs['EMail_TCo'];

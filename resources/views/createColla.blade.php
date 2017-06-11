@@ -14,7 +14,7 @@
 					</div>
 					<div class="form-group {!! $errors->has('Date_In_TCa') ? 'has-error' : '' !!}">
 					  	{!! Form::date('Date_In_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date entrée']) !!}
-							{!! $errors->first('Collaborateur_TCa', '<small class="help-block">:message</small>') !!}
+							{!! $errors->first('Date_In_TCa', '<small class="help-block">:message</small>') !!}
 
 					</div>
           <div class="form-group">
