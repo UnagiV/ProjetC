@@ -31,7 +31,7 @@ class CollaborateurController extends Controller
     {
         $T_Collaborateurs = $this->collaborateurRepository->getPaginate($this->nbrPerPage);
         $links = $T_Collaborateurs->render();
-        
+
 
         return view('indexColla', compact('T_Collaborateurs', 'links'));
     }
