@@ -21,6 +21,8 @@ class Collaborateur extends Model
   //Date_In_TCa et Date_Out_TCa sont les noms des colonnes sur notre db
   protected $dates = ['Date_In_TCa','Date_Out_TCa'];
 
+  // protected $dateFormat = ['d-m-Y'];
+
     // public function getDateInAttribute()
     //   {
     //     return $this->attributes['Date_In_TCa']->format('d-m-Y');

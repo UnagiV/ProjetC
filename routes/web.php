@@ -14,7 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::resource('bonIntervention','BonInterventionController');
 Route::resource('collaborateur','CollaborateurController');
 Route::resource('facture','FactureController');
-Route::resource('bonIntervention','BonInterventionController');
+Route::resource('client','ClientController');
+
