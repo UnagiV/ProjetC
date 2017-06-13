@@ -4,7 +4,7 @@
 	<div class="col-sm-offset-4 col-sm-4">
 		<br>
 		<div class="panel panel-primary">
-			<div class="panel-heading">Création d'un utilisateur</div>
+			<div class="panel-heading">Création d'une facture</div>
 			<div class="panel-body">
 				<div class="col-sm-12">
 					{!! Form::open(['route' => 'collaborateur.store', 'class' => 'form-horizontal panel']) !!}

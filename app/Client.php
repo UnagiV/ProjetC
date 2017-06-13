@@ -19,6 +19,6 @@ class Client extends Model
 
     public function contacts()
 	{
-		return $this->belongsTo('Contact','Id_TCo');
+		return $this->hasMany('App\Contact','Ste_TCl');
 	}
 }

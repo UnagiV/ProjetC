@@ -15,9 +15,9 @@ class Contact extends Model
 
     public $timestamps = false;
 
-    public function client()
+    public function clients()
 {
-    return $this->hasMany('App\Client');
+    return $this->belongsTo('App\Client');
 }
 
 }

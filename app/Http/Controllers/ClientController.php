@@ -12,7 +12,7 @@ class ClientController extends Controller
     protected $clientRepository;
     protected $contactRepository;
 
-    protected $nbrPerPage = 15;
+    protected $nbrPerPage = 10;
 
     public function __construct(ClientRepository $clientRepository)
     {
@@ -30,13 +30,12 @@ class ClientController extends Controller
      */
     public function index()
     {
-        // $T_Clients = Client::with('contacts')->get();
+
         $T_Clients = $this->clientRepository->getPaginate($this->nbrPerPage);
-        $T_Clients->load('contacts');
+
         $links = $T_Clients->render();
 
-        $T_Contact = $this->contactRepository;//->getPaginate($this->nbrPerPage);
-        $links = $T_Contact;
+
 
         return view('indexClient', compact('T_Clients','links'));
 
@@ -76,9 +75,14 @@ class ClientController extends Controller
     public function show($Id_TCl)
     {
         $client = $this->clientRepository->getById($Id_TCl);
+
         // $contact = $this->contactRepository->getById($$Id_TCo);
 
         return view('showClient', compact('client'));
+
+
+        return $client->contacts->Id_TCo;
+
     }
 
     /**

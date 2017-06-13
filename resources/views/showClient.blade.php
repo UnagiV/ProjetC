@@ -6,24 +6,27 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">Fiche de la Facture</div>
 			<div class="panel-body">
-        <p>N°Facture : {{ $facture->NFacture_TFCl }} Nom du client : {{ $facture->Ste_TCl }}</p>
-        <!-- <p>Nom du client : {{ $facture->Ste_TCl }}</p> -->
-        <p>Contact Client : {{ $facture->Contact_TCo }}</p>
-        <p>Etablie par : {{ $facture->Responsable_TCa }}</p>
-        <p>Mode de reglement : {{ $facture->Mdr_TCl }}</p>
-        <p>Adresse de Facturation : {{ $facture->Adr_Fact_TCl }}</p>
-        <p>Date de la Facturation : {{ date('d-m-Y', strtotime($facture->Date_TFCl)) }}</p>
-        <p>Date d'Echéance  : {{ date('d-m-Y', strtotime($facture->Ech_TFCl)) }}</p>
-        <p>Date de Reglement : {{ date('d-m-Y', strtotime($facture->Paid_TFCl)) }}</p>
-        <p>Avoir : {{ $facture->Avoir_TFCl }}</p>
-        <p>Note : {{ $facture->BlNote_TFCl }}</p>
-        <p>Total Main d'Oeuvre HT : {{round($facture->Total_MO_HT_TFCl,2) }}€</p>
-        <p>Total Vente HT : {{round($facture->Total_Vente_HT_TFCl,2) }}€</p>
-        <p>Total Trajet HT : {{round($facture->Total_Trajet_HT_TFCl,2) }}€</p>
-        <p>Total Deplacement HT : {{round($facture->Total_Depl_HT_TFCl,2) }}€</p>
-        <p>Total HT : {{round($facture->Total_HT_TFCl,2) }}€</p>
-        <p>Total TVA : {{round($facture->Total_TVA_TFCl,2) }}€</p>
-        <p>Total TTC : {{round($facture->Total_TTC_TFCl,2) }}€</p>
+        <p>N° de Client: {{ $client->Id_TCl }} Nom du client : {{ $client->Ste_TCl }}</p>
+        <p>Année de création : {{ $client->An_TCl }}</p>
+        <p>Contact Achat : {{ $client->Contact_TCl }}</p>
+        <p>Adresse de Facturation : {{ $client->Adr_Fact_TCl }}</p>
+        <p>Téléphone : {{ $client->Tel_TCl }} Fax : {{ $client->Fax_TCl }}</p>
+        <p>Site Web : {{ $client->Web_TCl }} Email : {{ $client->EMail_TCl }} </p>
+        <p>Mode de reglement : {{ $client->Mdr_TCl }}</p>
+        <p>Information : {{ $client->Information_TCl }}</p>
+        <p>Siret : {{ $client->Siret_TCl }}</p>
+        <p>Siren : {{ $client->Siren_TCl }}</p>
+        <p>TPE : {{ $client->TPE_TCl }}</p>
+        <p>PME-PMI : {{ $client->PME_PMI_TCl }}</p>
+        <p>ETI : {{ $client->ETI_TCl }}</p>
+        <p>Grands Comptes : {{ $client->Grands_Comptes_TCl }}</p>
+        <p>Particulier : {{ $client->Particulier_TCl }}</p>
+        <p>Collectivité : {{ $client->Collec_TCl }}</p>
+        <p>Tarif M.O. Electricté : {{ $client->Tarif_Elec }} €</p>
+        <p>Tarif M.O. Diagnostic : {{ $client->Tarif_Tech }} €</p>
+        <p>Tarif M.O. Automatisme: {{round($client->Tarif_Autom) }} €</p>
+        <p>Tarif M.O. Etude : {{round($client->Tarif_Etude) }} €</p>
+
   </div>
 		</div>
 		<a href="javascript:history.back()" class="btn btn-primary">

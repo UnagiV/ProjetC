@@ -45,7 +45,7 @@
 					@foreach ($T_Clients as $client)
 						<tr>
 							<td>{!! $client->Id_TCl !!}</td>
-						  <td class="text-primary"><strong>{!! date('d-m-Y', strtotime($client->An_TCl)) !!}</strong></td>
+						  <td class="text-primary"><strong>{!! $client->An_TCl !!}</strong></td>
               <td class="text-primary"><strong>{!! $client->Ste_TCl !!}</strong></td>
               <td class="text-primary"><strong>{!! $client->Contact_TCl !!}</strong></td>
               <td class="text-primary"><strong>{!! $client->Adr_Fact_TCl !!}</strong></td>
@@ -79,7 +79,7 @@
 					@endforeach
 	  			</tbody>
 			</table>
-      
+
 		</div>
 		{!! link_to_route('client.create', 'Ajouter un client', [], ['class' => 'btn btn-info pull-right']) !!}
 		{!! $links !!}
