@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Request;
 use Carbon\Carbon;
 
-use App\Http\Requests\CollaborateurCreateRequest;
- use App\Http\Requests\CollaborateurUpdateRequest;
+// use App\Http\Requests\CollaborateurCreateRequest;
+ // use App\Http\Requests\CollaborateurUpdateRequest;
 
 use App\Repositories\CollaborateurRepository;
 //////looool

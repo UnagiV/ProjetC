@@ -15,4 +15,9 @@ class Contact extends Model
 
     public $timestamps = false;
 
+    public function clients()
+{
+    return $this->belongsTo('App\Client');
+}
+
 }

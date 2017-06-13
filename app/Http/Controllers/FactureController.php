@@ -10,7 +10,7 @@ class FactureController extends Controller
 {
     protected$factureRepository;
 
-    protected $nbrPerPage = 15;
+    protected $nbrPerPage = 5;
 
     public function __construct(FactureRepository $factureRepository)
     {

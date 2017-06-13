@@ -4,7 +4,7 @@
 	<div class="col-sm-offset-4 col-sm-4">
 		<br>
 		<div class="panel panel-primary">
-			<div class="panel-heading">Création d'un utilisateur</div>
+			<div class="panel-heading">Création d'une facture</div>
 			<div class="panel-body">
 				<div class="col-sm-12">
 					{!! Form::open(['route' => 'collaborateur.store', 'class' => 'form-horizontal panel']) !!}
@@ -41,18 +41,7 @@
 
 					</div>
 
-					<div class="form-group">
-<<<<<<< HEAD
-						<div class="checkbox">
-							<label>
-								{!! Form::checkbox('TR_TCa', 1, null) !!}Ticket Restaurant
-							</label>
-						</div>
-					</div>
-=======
 
-
->>>>>>> master
 					{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>

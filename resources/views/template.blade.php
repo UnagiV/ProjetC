@@ -15,17 +15,28 @@
 	</head>
 	<body>
 
-		<table class="table">
+		<table class="col-sm-offset-4 col-sm-4">
 			<tbody>
-				<th>DashBord</th>
-				<th>Bon d'Intervention</th>
-				<th>Devis</th>
-				<th>Suivi de Chantier</th>
-				<th>Factures</th>
-				<th>Annuaire Clients</th>
-				<th>Fiche Collaborateurs</th>
-				<th>Stock</th>
-				<th>Recherche</th>
+				<button class="btn btn-primary" type="button">DashBord</button>
+				<button class="btn btn-primary" type="button">Bon d'Intervention</button>
+				<button class="btn btn-primary" type="button">Devis</button>
+				<button class="btn btn-primary" type="button">Suivi de Chantier</button>
+				<button class="btn btn-primary" type="button">Factures</button>
+				<button class="btn btn-primary" type="button">Annuaire Clients</button>
+				<button class="btn btn-primary" type="button">Fiche Collaborateurs</button>
+				<button class="btn btn-primary" type="button">Stock</button>
+				<button class="btn btn-primary" type="button">Recherche</button>
+
+				<!-- <input class="btn btn-primary" type="button" value="DashBord"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Bon d'Intervention"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Devis"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Suivi de Chantier"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Factures"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Annuaire Clients"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Fiche Collaborateurs"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Stock"> -->
+				<!-- <input class="btn btn-primary" type="button" value="Recherche"> -->
+
 			</tbody>
 
 		</table>
