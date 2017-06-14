@@ -50,6 +50,18 @@
               <td class="text-primary"><strong>{!! $client->Contact_TCl !!}</strong></td>
               <td class="text-primary"><strong>{!! $client->Adr_Fact_TCl !!}</strong></td>
               <td class="text-primary"><strong>{!! $client->Tel_TCl !!}</strong></td>
+
+              <?php $contactClient = DB::table('t_contact')->where('Ste_TCl', $client->Ste_TCl)->get() ?>
+              @if($contactClient->count() > 0)
+              <td class="text-primary"><strong>
+                @for ($i = 0; $i < $contactClient->count(); $i++)
+                ->{!! $contactClient[$i]->Contact_TCo !!}
+                @endfor
+              </strong></td>
+              @else
+              <td class="text-primary"><strong>"Pas de contact"</strong></td>
+              @endif
+
               <!-- <td class="text-primary"><strong>{!! $client->Fax_TCl !!}</strong></td> -->
               <!-- <td class="text-primary"><strong>{!! $client->EMail_TCl !!}</strong></td> -->
               <!-- <td class="text-primary"><strong>{!! $client->Web_TCl !!}</strong></td> -->
