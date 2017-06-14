@@ -14,30 +14,33 @@
 					</div>
           <div class="form-group {!! $errors->has('Date_In_TCa') ? 'has-error' : '' !!}">
 					  	{!! Form::date('Date_In_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date entrée']) !!}
-					  	<!-- {!! $errors->first('Date_In_TCa', '<small class="help-block">:message</small>') !!} -->
+					  	{!! $errors->first('Date_In_TCa', '<small class="help-block">:message</small>') !!}
 					</div>
-          <div class="form-group {!! $errors->has('Date_Out_TCa') ? 'has-error' : '' !!}">
+          <div class="form-group">
 					  	{!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date Sortie']) !!}
-					  	{!! $errors->first('Date_Out_TCa', '<small class="help-block">:message</small>') !!}
 					</div>
-          <div class="form-group {!! $errors->has('Acces_TCa') ? 'has-error' : '' !!}">
-					  	{!! Form::text('Acces_TCa', null, ['class' => 'form-control', 'placeholder' => 'Accès']) !!}
-					  	<!-- {!! $errors->first('Acces_TCa', '<small class="help-block">:message</small>') !!} -->
+          <div class="form-group ">
+							<select class="form-control" name="Acces_TCa">
+								<option selected="selected" disabled="disabled" hidden="hidden" value>Accès</option>
+								<option value="9999">9999</option>
+								<option value="9000">9000</option>
+								<option value="4000">4000</option>
+								<option value="1000">1000</option>
+							</select>
+							<!-- {!! $errors->first('Acces_TCa', '<small class="help-block">:message</small>') !!} -->
 					</div>
           <div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
-					  	<!-- {!! Form::text('Responsable_TCa', null, ['class' => 'form-control', 'placeholder' => 'Responsable']) !!} -->
-					  	<!-- {!! $errors->first('Responsable_TCa', '<small class="help-block">:message</small>') !!} -->
               <select class="form-control" name="Responsable_TCa">
-								<option selected="selected"  hidden="hidden" value>{{ $collaborateur->Responsable_TCa }}</option>
+								<option selected="selected"  hidden="hidden" >{{ $collaborateur->Responsable_TCa }}</option>
 								<option value="Cédric Dupuis">Cédric Dupuis</option>
 								<option value="Bastien Jambon">Bastien Jambon</option>
 							</select>
-
+              {!! $errors->first('Responsable_TCa', '<small class="help-block">:message</small>') !!}
 					</div>
 
 					<div class="form-group">
 						<div class="checkbox">
-              <label>{!! Form::checkbox('TR_TCa', 1, null) !!} Ticket Restaurant</label> 
+              <label>{!! Form::checkbox('TR_TCa', 1, null) !!} Ticket Restaurant</label>
             </div>
 					</div>
 						{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}

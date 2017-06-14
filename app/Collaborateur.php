@@ -11,10 +11,8 @@ class Collaborateur extends Model
   protected $primaryKey = 'Id_TCa';
 
   protected $table = 'T_Collaborateurs';
-
-
-
-  protected $fillable = ['Collaborateur_TCa', 'Date_In_TCa','Date_Out_TCa', 'Acces_TCa','Responsable_TCa','TR_TCa'];
+  protected $fillable = ['Collaborateur_TCa', 'Date_In_TCa','Date_Out_TCa',
+  'Acces_TCa','Responsable_TCa','TR_TCa'];
 
   public $timestamps = false;
 

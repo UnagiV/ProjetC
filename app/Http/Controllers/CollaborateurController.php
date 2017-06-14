@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Request;
 use Carbon\Carbon;
 
-// use App\Http\Requests\CollaborateurCreateRequest;
- // use App\Http\Requests\CollaborateurUpdateRequest;
+use App\Http\Requests\CollaborateurCreateRequest;
+use App\Http\Requests\CollaborateurUpdateRequest;
 
 use App\Repositories\CollaborateurRepository;
 //////looool
@@ -52,7 +52,7 @@ class CollaborateurController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CollaborateurCreateRequest $request)
     {
         $collaborateur =$this->collaborateurRepository->store($request::all());
 
