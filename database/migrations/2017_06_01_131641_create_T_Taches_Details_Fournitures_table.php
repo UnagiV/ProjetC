@@ -15,7 +15,10 @@ class CreateTTachesDetailsFournituresTable extends Migration {
 		Schema::create('T_Taches_Details_Fournitures', function(Blueprint $table)
 		{
 			$table->integer('Id_TTaDFo', true);
-			$table->integer('Id_TTa')->nullable()->index('Id_TTa');
+			$table->integer('Id_TTa')->nullable();
+			$table->foreign('Id_TTa')->references('Id_TTa')->on('T_taches');
+
+			//$table->integer('Id_TTa')->nullable()->index('Id_TTa');
 			$table->string('Class_TTaDFo')->nullable();
 			$table->string('Des_TTaDFo')->nullable();
 			$table->string('Ref_TTaDFo')->nullable();

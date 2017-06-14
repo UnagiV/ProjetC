@@ -34,6 +34,7 @@ class ClientController extends Controller
         $T_Clients = $this->clientRepository->getPaginate($this->nbrPerPage);
 
         $links = $T_Clients->render();
+        
 
         return view('indexClient', compact('T_Clients','links'));
 

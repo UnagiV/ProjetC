@@ -8,7 +8,7 @@
 		@endif
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title">Liste des collaborateurs</h3>
+				<h3 class="panel-title">Liste des bons d'interventions</h3>
 			</div>
 			<table class="table">
 				<thead>
@@ -25,6 +25,7 @@
 					</tr>
 				</thead>
 				<tbody>
+
 					@foreach ($T_Taches as $tache)
 						<tr>
 							<td>{!! $tache->Id_TTa !!}</td>
@@ -38,20 +39,31 @@
               <td class="text-primary"><strong>{!! $tache->Responsable_TCa !!}</strong></td>
               <td class="text-primary"><strong>{!! $tache->Collaborateur_TCa !!}</strong></td>
               <td class="text-primary"><strong>{!! $tache->Travaux_TTa !!}</strong></td>
-							<td>{!! link_to_route('bonIntervention.show', 'Voir', [$tache->Id_TTa], ['class' => 'btn btn-success btn-block']) !!}</td>
-							<td>{!! link_to_route('bonIntervention.edit', 'Modifier', [$tache->Id_TTa], ['class' => 'btn btn-warning btn-block']) !!}</td>
+							<td>{!! link_to_route('bonintervention.show', 'Voir', [$tache->Id_TTa], ['class' => 'btn btn-success btn-block']) !!}</td>
+							<td>{!! link_to_route('bonintervention.edit', 'Modifier', [$tache->Id_TTa], ['class' => 'btn btn-warning btn-block']) !!}</td>
 							<td>
-								{!! Form::open(['method' => 'DELETE', 'route' => ['bonIntervention.destroy', $tache->Id_TTa]]) !!}
+								{!! Form::open(['method' => 'DELETE', 'route' => ['bonintervention.destroy', $tache->Id_TTa]]) !!}
 									{!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce bon ?\')']) !!}
 								{!! Form::close() !!}
 							</td>
-              <td>{{$tache->bonInterventionFournitures->Class_TTaDFo}}</td>
+
+              @if($tache->boninterventionFournitures->count() > 0)
+              <td>
+                @for ($i = 0; $i < $tache->boninterventionFournitures->count(); $i++)
+                {{ $tache->boninterventionFournitures[$i]->Class_TTaDFo}}
+                @endfor
+              </td>
+              @endif
+
+
+
 						</tr>
 					@endforeach
+
 	  			</tbody>
 			</table>
 		</div>
-		{!! link_to_route('bonIntervention.create', 'Créer un bon d intervention', [], ['class' => 'btn btn-info pull-right']) !!}
+		{!! link_to_route('bonintervention.create', 'Créer un bon d intervention', [], ['class' => 'btn btn-info pull-right']) !!}
 		{!! $links !!}
 	</div>
 @endsection
