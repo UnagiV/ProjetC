@@ -21,7 +21,7 @@
 					  	{!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date Sortie']) !!}
 
 					</div>
-          <div class="form-group">
+          <div class="form-group  {!! $errors->has('Acces_TCa') ? 'has-error' : '' !!}">
 
 							<select class="form-control" name="Acces_TCa">
 								<option selected="selected" disabled="disabled" hidden="hidden" value>Acces</option>
