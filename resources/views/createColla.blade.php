@@ -21,8 +21,7 @@
 					  	{!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date Sortie']) !!}
 
 					</div>
-          <div class="form-group">
-
+          <div class="form-group  {!! $errors->has('Acces_TCa') ? 'has-error' : '' !!}">
 							<select class="form-control" name="Acces_TCa">
 								<option selected="selected" disabled="disabled" hidden="hidden" value>Acces</option>
 								<option value="9999">9999</option>
@@ -31,22 +30,15 @@
 								<option value="1000">1000</option>
 							</select>
 							{!! $errors->first('Acces_TCa', '<small class="help-block">:message</small>') !!}
-
 					</div>
-          <!-- <div class="form-group"> -->
-					  	<!-- {!! Form::text('Responsable_TCa', null, ['class' => 'form-control', 'placeholder' => 'Responsable']) !!} -->
-					<!-- </div> -->
-					<div class="form-group  {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
-					  	<!-- {!! Form::select('Responsable_TCa',['Cédric Dupuis', 'Bastien Jambon'], null, ['class' => 'form-control', 'placeholder' => 'Responsable']) !!} -->
 
+					<div class="form-group  {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
 							<select class="form-control" name="Responsable_TCa">
 								<option selected="selected" disabled="disabled" hidden="hidden" value>Responsable</option>
 								<option value="Cédric Dupuis">Cédric Dupuis</option>
 								<option value="Bastien Jambon">Bastien Jambon</option>
 							</select>
 							{!! $errors->first('Responsable_TCa', '<small class="help-block">:message</small>') !!}
-
-
 					</div>
 
 					<div class="form-group">

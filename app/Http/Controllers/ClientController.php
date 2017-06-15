@@ -36,6 +36,7 @@ class ClientController extends Controller
 
         $links = $T_Clients->render();
 
+
         return view('indexClient', compact('T_Clients','links'));
 
     }
@@ -75,13 +76,7 @@ class ClientController extends Controller
     {
         $client = $this->clientRepository->getById($Id_TCl);
 
-        // $contact = $this->contactRepository->getById($$Id_TCo);
-
         return view('showClient', compact('client'));
-
-
-        return $client->contacts->Id_TCo;
-
     }
 
     /**

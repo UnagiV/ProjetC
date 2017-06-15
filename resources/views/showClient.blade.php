@@ -24,8 +24,8 @@
         <p>Collectivité : {{ $client->Collec_TCl }}</p>
         <p>Tarif M.O. Electricté : {{ $client->Tarif_Elec }} €</p>
         <p>Tarif M.O. Diagnostic : {{ $client->Tarif_Tech }} €</p>
-        <p>Tarif M.O. Automatisme: {{round($client->Tarif_Autom) }} €</p>
-        <p>Tarif M.O. Etude : {{round($client->Tarif_Etude) }} €</p>
+        <p>Tarif M.O. Automatisme: {{ $client->Tarif_Autom }} €</p>
+        <p>Tarif M.O. Etude : {{ $client->Tarif_Etude }} €</p>
 
   </div>
 		</div>
