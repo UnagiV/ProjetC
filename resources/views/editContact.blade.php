@@ -4,10 +4,10 @@
     <div class="col-sm-offset-4 col-sm-4">
     	<br>
 		<div class="panel panel-primary">
-			<div class="panel-heading">Création d'un client</div>
+			<div class="panel-heading">Modification d'un client</div>
 			<div class="panel-body">
 				<div class="col-sm-12">
-					{!! Form::open(['route' => 'client.store', 'class' => 'form-horizontal panel']) !!}
+					{!! Form::model($client, ['route' => ['client.update', $client->Id_TCl], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
 					<div class="form-group {!! $errors->has('Ste_TCl') ? 'has-error' : '' !!}">Nom du Client
 					  	{!! Form::text('Ste_TCl', null, ['class' => 'form-control', 'placeholder' => 'Nom du Client']) !!}
 					  	{!! $errors->first('Ste_TCl', '<small class="help-block">:message</small>') !!}
@@ -42,7 +42,7 @@
 					</div>
           <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
 					  	<select class="form-control" name="Mdr_TCl">
-								<option selected="selected"  hidden="hidden" >Mode de reglement</option>
+								<option selected="selected"  hidden="hidden" value="{{ $client->Mdr_TCl }}">{{ $client->Mdr_TCl }}</option>
 								<option value="Chèque - Comptant">Chèque - Comptant</option>
 								<option value="Chèque - 30 jours fin du mois le 15">Chèque - 30 jours fin du mois le 15</option>
                 <option value="Chèque - 60 jours net">Chèque - 60 jours net</option>
@@ -53,11 +53,11 @@
 							</select>
           </div>
 
-          <div class="form-group ">Information
+          <div class="form-group {!! $errors->has('Information_TCl') ? 'has-error' : '' !!}">Information
 					  	{!! Form::text('Information_TCl', null, ['class' => 'form-control', 'placeholder' => 'Information']) !!}
 					  	<!-- {!! $errors->first('Information_TCl', '<small class="help-block">:message</small>') !!} -->
 					</div>
-          <div class="form-group ">Siret
+          <div class="form-group {!! $errors->has('Siret_TCl') ? 'has-error' : '' !!}">Siret
 					  	{!! Form::text('Siret_TCl', null, ['class' => 'form-control', 'placeholder' => 'Siret']) !!}
 					  	<!-- {!! $errors->first('Siret_TCl', '<small class="help-block">:message</small>') !!} -->
 					</div>
@@ -88,9 +88,33 @@
 					  	{!! $errors->first('Tarif_Autom', '<small class="help-block">:message</small>') !!}
 					</div>
           <div class="form-group {!! $errors->has('Tarif_Etude') ? 'has-error' : '' !!}">Tarif M.O. Etude
-					  	{!! Form::text('Tarif_Etude', null, ['class' => 'form-control', 'placeholder' => 'Tarif M.O. EtudeTarif_Etude']) !!}
+					  	{!! Form::text('Tarif_Etude', null, ['class' => 'form-control', 'placeholder' => 'Tarif M.O. Etude']) !!}
 					  	{!! $errors->first('Tarif_Etude', '<small class="help-block">:message</small>') !!}
 					</div>
+
+          <?php $contactClient = DB::table('t_contact')->where('Ste_TCl',
+          $client->Ste_TCl)->get() ?>
+          @if($contactClient->count() > 0)
+          <div class="text-primary"><strong>
+            @for ($i = 0; $i < $contactClient->count(); $i++)
+            <div class="text-primary" style="border:2px solid black">Contact :{!! Form::text(
+              '$contactClient[$i]->Contact_TCo',null, ['class' => 'form-control',
+              'placeholder' => 'Contact_TCo']) !!}
+            </div>
+            <p>Entité : {!! $contactClient[$i]->Entite_TCo !!}</p>
+            <p>Téléphone Contact : {!! $contactClient[$i]->Tel_TCo !!}</p>
+            <p>N° de poste : {!! $contactClient[$i]->N_Poste !!}</p>
+            <p>N° Indicatif : {!! $contactClient[$i]->Indicatif_TCo !!}</p>
+            <p>Portable Contact : {!! $contactClient[$i]->Port_TCo !!}</p>
+            <p>Adresse de Livraison : {!! $contactClient[$i]->Adr_Liv_TCl !!}</p>
+
+
+
+            @endfor
+          </strong></div>
+          @else
+          <td class="text-primary"><strong>"Pas de contact"</strong></td>
+          @endif
 
 
 

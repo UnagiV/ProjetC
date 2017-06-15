@@ -6,11 +6,12 @@ use Request;
 use App\Client;
 use App\Repositories\ClientRepository;
 use App\Repositories\ContactRepository;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
     protected $clientRepository;
-    protected $contactRepository;
+
 
     protected $nbrPerPage = 10;
 
@@ -19,10 +20,7 @@ class ClientController extends Controller
       $this->clientRepository = $clientRepository;
     }
 
-    // public function __construct(ContactRepository $contactRepository)
-    // {
-    //   $this->contactRepository = $contactRepository;
-    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +32,7 @@ class ClientController extends Controller
         $T_Clients = $this->clientRepository->getPaginate($this->nbrPerPage);
 
         $links = $T_Clients->render();
-        
+
 
         return view('indexClient', compact('T_Clients','links'));
 
@@ -59,9 +57,10 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $client = $this->clientRepository->store($request::all());
-        // $contact = $this->contactRepository->store($request::all());
 
-        return redirect('client')->withOk("la fiche du client " . $client->Ste_TCl . " a été crée.");
+
+        return redirect('client')->withOk("la fiche du client " .
+        $client->Ste_TCl . " a été crée.");
 
     }
 
@@ -87,7 +86,7 @@ class ClientController extends Controller
     public function edit($Id_TCl)
     {
       $client = $this->clientRepository->getById($Id_TCl);
-      // $contact = $this->contactRepository->getById($$Id_TCo);
+
 
       return view('editClient', compact('client'));
     }
@@ -103,8 +102,6 @@ class ClientController extends Controller
     {
         $this->clientRepository->update($Id_TCl,$request::all());
 
-        // $this->contactRepository->update($Id_TCo,$request::all());
-
         return redirect('client')->withOk("la fiche client a été modifié.");
     }
 
@@ -117,8 +114,6 @@ class ClientController extends Controller
     public function destroy($Id_TCl)
     {
         $this->clientRepository->destroy($Id_TCl);
-
-        // $this->contactRepository->destroy($Id_TCo);
 
         return redirect()->back();
     }

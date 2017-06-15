@@ -18,17 +18,17 @@
 					</div>
           <div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">Etablie par
               <select class="form-control" name="Responsable_TCa">
-								<option selected="selected"  hidden="hidden" value>{{ $facture->Responsable_TCa }}</option>
+								<option selected="selected"  hidden="hidden" value="{{ $facture->Responsable_TCa }}">{{ $facture->Responsable_TCa }}</option>
 								<option value="Cédric Dupuis">Cédric Dupuis</option>
 								<option value="Bastien Jambon">Bastien Jambon</option>
 							</select>
           </div>
           <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
 					  	<select class="form-control" name="Mdr_TCl">
-								<option selected="selected"  hidden="hidden" value>{{ $facture->Mdr_TCl }}</option>
+								<option selected="selected"  hidden="hidden" value="{{ $facture->Mdr_TCl }}">{{ $facture->Mdr_TCl }}</option>
 								<option value="Chèque - Comptant">Chèque - Comptant</option>
 								<option value="Chèque - 30 jours fin du mois le 15">Chèque - 30 jours fin du mois le 15</option>
-                <option value="Chèque - Comptant">Chèque - Comptant</option>
+                <option value="Chèque - 60 jours net">Chèque - 60 jours net</option>
 								<option value="Espèces">Espèces</option>
                 <option value="Virement - Comptant">Virement - Comptant</option>
 								<option value="Virement - 30 jours fin du mois le 15">Virement - 30 jours fin du mois le 15</option>
