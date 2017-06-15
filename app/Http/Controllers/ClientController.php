@@ -6,6 +6,7 @@ use Request;
 use App\Client;
 use App\Repositories\ClientRepository;
 use App\Repositories\ContactRepository;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -34,9 +35,6 @@ class ClientController extends Controller
         $T_Clients = $this->clientRepository->getPaginate($this->nbrPerPage);
 
         $links = $T_Clients->render();
-        
-
-
 
         return view('indexClient', compact('T_Clients','links'));
 
