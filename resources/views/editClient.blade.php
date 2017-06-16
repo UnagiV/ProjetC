@@ -92,28 +92,28 @@
 					  	{!! $errors->first('Tarif_Etude', '<small class="help-block">:message</small>') !!}
 					</div>
 
-          <!-- <?php $contactClient = DB::table('t_contact')->where('Ste_TCl',
-          $client->Ste_TCl)->get() ?>
+          <?php $contactClient = DB::table('t_contact')->where('Ste_TCl',$client->Ste_TCl)->get();
+
+          ?>
           @if($contactClient->count() > 0)
           <div class="text-primary"><strong>
             @for ($i = 0; $i < $contactClient->count(); $i++)
-            <div class="text-primary" style="border:2px solid black">Contact :{!! Form::text(
-              '$contactClient[$i]->Contact_TCo',null, ['class' => 'form-control',
-              'placeholder' => 'Contact_TCo']) !!}
-            </div>
+            <p>Contact :{!! $contactClient[$i]->Contact_TCo !!}</p>
             <p>Entité : {!! $contactClient[$i]->Entite_TCo !!}</p>
             <p>Téléphone Contact : {!! $contactClient[$i]->Tel_TCo !!}</p>
             <p>N° de poste : {!! $contactClient[$i]->N_Poste !!}</p>
             <p>N° Indicatif : {!! $contactClient[$i]->Indicatif_TCo !!}</p>
             <p>Portable Contact : {!! $contactClient[$i]->Port_TCo !!}</p>
             <p>Adresse de Livraison : {!! $contactClient[$i]->Adr_Liv_TCl !!}</p>
+            <!-- {!! link_to_route('contact.edit','Modifier ce Contact',[$contactClient[$i]->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!} -->
+
             @endfor
           </strong></div>
           @else
           <td class="text-primary"><strong>"Pas de contact"</strong></td>
-          @endif -->
+          @endif
 
-          <td>{!! link_to_route('contact.edit', 'Modifier', [$contact->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!}</td>
+
 
 						{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}

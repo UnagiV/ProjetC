@@ -33,7 +33,6 @@ class ClientController extends Controller
 
         $links = $T_Clients->render();
 
-
         return view('indexClient', compact('T_Clients','links'));
 
     }
@@ -74,6 +73,7 @@ class ClientController extends Controller
     {
         $client = $this->clientRepository->getById($Id_TCl);
 
+
         return view('showClient', compact('client'));
     }
 
@@ -86,7 +86,7 @@ class ClientController extends Controller
     public function edit($Id_TCl)
     {
       $client = $this->clientRepository->getById($Id_TCl);
-
+      // $modifContact = DB::table('t_contact')->pluck('Id_TCo');
 
       return view('editClient', compact('client'));
     }

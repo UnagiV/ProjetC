@@ -70,7 +70,7 @@ class BonInterventionRepository
     public function store(Array $inputs)
     {
       $bonIntervention = new $this->bonIntervention;
-      // $collaborateur->password = bcrypt($inputs['password']);
+      //  $collaborateur->password = bcrypt($inputs['password']);
 
       $this->save($bonIntervention, $inputs);
 
