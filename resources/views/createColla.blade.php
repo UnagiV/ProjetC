@@ -34,7 +34,7 @@
 
 					<div class="form-group  {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
 							<select class="form-control" name="Responsable_TCa">
-								<option selected="selected"  hidden="hidden" value>Responsable</option>
+								<option selected="selected"  hidden="hidden" value={{Responsable_TCa}}>Responsable</option>
 								<option value="Cédric Dupuis">Cédric Dupuis</option>
 								<option value="Bastien Jambon">Bastien Jambon</option>
 							</select>
