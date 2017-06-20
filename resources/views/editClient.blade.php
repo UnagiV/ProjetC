@@ -105,9 +105,11 @@
             <p>N° Indicatif : {!! $contactClient[$i]->Indicatif_TCo !!}</p>
             <p>Portable Contact : {!! $contactClient[$i]->Port_TCo !!}</p>
             <p>Adresse de Livraison : {!! $contactClient[$i]->Adr_Liv_TCl !!}</p>
-            <!-- {!! link_to_route('contact.edit','Modifier ce Contact',[$contactClient[$i]->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!} -->
+            {!! link_to_route('contact.edit','Modifier ce Contact',[$contactClient[$i]->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!}
+            {!! link_to_route('contact.create','Ajouter un Contact',[$contactClient[$i]->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!}
 
             @endfor
+
           </strong></div>
           @else
           <td class="text-primary"><strong>"Pas de contact"</strong></td>

@@ -17,10 +17,11 @@
 
 		<table class="col-sm-offset-4 col-sm-4">
 			<tbody>
-				<button class="btn btn-primary" type="button">DashBoard</button>
+				<button class="btn btn-primary" type="button">DashBoard :</button>
 				<button class="btn btn-primary" type="button">Bon d'Intervention</button>
 				<button class="btn btn-primary" type="button">Devis</button>
 				<button class="btn btn-primary" type="button">Suivi de Chantier</button>
+				{!! link_to_route('contact.create','Ajouter un Contact',[$contact->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!}
 				<button class="btn btn-primary" type="button">Factures</button>
 				<button class="btn btn-primary" type="button">Annuaire Clients</button>
 				<button class="btn btn-primary" type="button">Fiche Collaborateurs</button>

@@ -16,23 +16,20 @@
 					  	{!! Form::text('Ste_TCl', null, ['class' => 'form-control', 'placeholder' => 'Nom du client']) !!}
 					  	<!-- {!! $errors->first('Acces_TCa', '<small class="help-block">:message</small>') !!} -->
 					</div>
-          <div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">Etablie par
+          <div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">Responsable
               <select class="form-control" name="Responsable_TCa">
-								<option selected="selected"  hidden="hidden" value="{{ $facture->Responsable_TCa }}">{{ $facture->Responsable_TCa }}</option>
-								<option value="Cédric Dupuis">Cédric Dupuis</option>
-								<option value="Bastien Jambon">Bastien Jambon</option>
+								<option selected="selected"  hidden="hidden" value ="{{$facture->Responsable_TCa}}" >{{$facture->Responsable_TCa}}</option>
+                @for ($i = 0; $i < $responsables->count(); $i++)
+								<option value="{{$responsables[$i]->Collaborateur_TCa}}">{{$responsables[$i]->Collaborateur_TCa}}</option>
+                @endfor
 							</select>
           </div>
           <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
-					  	<select class="form-control" name="Mdr_TCl">
-								<option selected="selected"  hidden="hidden" value="{{ $facture->Mdr_TCl }}">{{ $facture->Mdr_TCl }}</option>
-								<option value="Chèque - Comptant">Chèque - Comptant</option>
-								<option value="Chèque - 30 jours fin du mois le 15">Chèque - 30 jours fin du mois le 15</option>
-                <option value="Chèque - 60 jours net">Chèque - 60 jours net</option>
-								<option value="Espèces">Espèces</option>
-                <option value="Virement - Comptant">Virement - Comptant</option>
-								<option value="Virement - 30 jours fin du mois le 15">Virement - 30 jours fin du mois le 15</option>
-                <option value="Virement - 60 jours net">Virement - 60 jours net</option>
+              <select class="form-control" name="Mdr_TCl">
+								<option selected="selected"  hidden="hidden" value ="{{$facture->Mdr_TCl}}" >{{$facture->Mdr_TCl}}</option>
+                @for ($i = 0; $i < $reglement->count(); $i++)
+								<option value="{{$reglement[$i]}}">{{$reglement[$i]}}</option>
+                @endfor
 							</select>
           </div>
           <div class="form-group {!! $errors->has('Adr_Fact_TCl') ? 'has-error' : '' !!}">Adresse de Facturation
@@ -87,6 +84,30 @@
 					  	{!! Form::text('Total_TTC_TFCl', null, ['class' => 'form-control', 'placeholder' => 'Total TTC']) !!}
 					  	<!-- {!! $errors->first('Total_TTC_TFCl', '<small class="help-block">:message</small>') !!} -->
 					</div>
+
+          @if($boninter->count() > 0)
+          <div class="text-primary"><strong>
+            @for ($i = 0; $i < $boninter->count(); $i++)
+              <p>N° Bon Intervention : {!! $boninter[$i]->Id_TTa !!}</p>
+              <p>Societe Cliente : {!! $boninter[$i]->Ste_TCl !!}</p>
+              <p>Societe Utilisatrice : {!! $boninter[$i]->Ste_Utl !!}</p>
+              <p>Adresse de Livraison : {!! $boninter[$i]->Adr_Liv_TCl !!}</p>
+              <p>Contact Client : {!! $boninter[$i]->Contact_TCo !!}</p>
+              <p>Collaborateur : {!! $boninter[$i]->Collaborateur_TCa !!}</p>
+
+
+            @endfor
+
+          </strong></div>
+          @else
+          <td class="text-primary"><strong>"Pas de bon d'intervention"</strong></td>
+          @endif
+
+
+
+
+
+
           {!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>

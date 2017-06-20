@@ -40,7 +40,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('createContact');
+        $entreprise = DB::table('T_Clients')->pluck('Ste_TCl');
+        return view('createContact', compact('entreprise'));
     }
 
     /**
@@ -67,7 +68,7 @@ class ContactController extends Controller
     {
         $contact = $this->contactRepository->getById($Id_TCo);
 
-        return view ('showClient', compact('client'));
+        return view ('showContact', compact('contact'));
     }
 
     /**
@@ -80,7 +81,7 @@ class ContactController extends Controller
     {
       $contact = $this->contactRepository->getById($Id_TCo);
 
-      return view ('editClient', compact('client'));
+      return view ('editContact', compact('contact'));
     }
 
     /**
@@ -107,6 +108,6 @@ class ContactController extends Controller
     {
       $this->contactRepository->destroy($Id_TCo);
 
-      return redirect()->back();  
+      return redirect()->back();
     }
 }

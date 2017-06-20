@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Request;
 
 use App\Repositories\FactureRepository;
+use Illuminate\Support\Facades\DB;
 
 class FactureController extends Controller
 {
@@ -37,7 +38,11 @@ class FactureController extends Controller
      */
     public function create()
     {
-        return view('createFacture');
+      $entreprise = DB::table('T_Clients')->pluck('Ste_TCl');
+      $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
+      $boninter = DB::table('T_Taches')->where('Ste_TCl')->get();
+
+        return view('createFacture', compact('responsables','boninter','entreprise') );
     }
 
     /**
@@ -77,8 +82,11 @@ class FactureController extends Controller
     public function edit($Id_TFCl)
     {
       $facture = $this->factureRepository->getById($Id_TFCl);
+      $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
+      $reglement = DB::table('T_Mode_Reglement')->pluck('Des_Mdr');
+      $boninter = DB::table('T_Taches')->where('NFacture_TFCl',$facture->NFacture_TFCl)->get();
 
-      return view ('editFacture', compact('facture'));
+      return view ('editFacture', compact('facture', 'responsables','reglement','boninter'));
     }
 
     /**
