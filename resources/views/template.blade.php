@@ -11,16 +11,17 @@
 			{{ Html::style('https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js') }}
 			{{ Html::style('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}
 		<![endif]-->
-		<style> textarea { resize: none; } </style>
+		<style> textarea { resize: none; }</style>
 	</head>
 	<body>
 
 		<table class="col-sm-offset-4 col-sm-4">
 			<tbody>
-				<button class="btn btn-primary" type="button">DashBoard</button>
+				<button class="btn btn-primary" type="button">DashBoard :</button>
 				<button class="btn btn-primary" type="button">Bon d'Intervention</button>
 				<button class="btn btn-primary" type="button">Devis</button>
 				<button class="btn btn-primary" type="button">Suivi de Chantier</button>
+				{!! link_to_route('contact.create','Ajouter un Contact',[$contact->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!}
 				<button class="btn btn-primary" type="button">Factures</button>
 				<button class="btn btn-primary" type="button">Annuaire Clients</button>
 				<button class="btn btn-primary" type="button">Fiche Collaborateurs</button>
