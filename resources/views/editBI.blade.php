@@ -27,7 +27,7 @@
           <div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
               <select class="form-control" name="Responsable_TCa">
 								<option selected="selected"  hidden="hidden" value ="{{$bonIntervention->Responsable_TCa}}" >{{$bonIntervention->Responsable_TCa}}</option>
-                <?php  ?>
+
 
                 @for ($i = 0; $i < $responsables->count(); $i++)
 								<option value="{{$responsables[$i]->Collaborateur_TCa}}">{{$responsables[$i]->Collaborateur_TCa}}</option>
@@ -37,7 +37,7 @@
           <div class="form-group {!! $errors->has('Collaborateur_TCa') ? 'has-error' : '' !!}">
               <select class="form-control" name="Collaborateur_TCa">
 								<option selected="selected"  hidden="hidden" value="{{$bonIntervention->Collaborateur_TCa}}">{{$bonIntervention->Collaborateur_TCa}}</option>
-                <?php  ?>
+
 
 
                 @for ($i = 0; $i < $collaborateurs->count(); $i++)
@@ -51,26 +51,60 @@
 					</div>
 
 
-          <div class="form-group {!! $errors->has('Date_Debut_TTa') ? 'has-error' : '' !!}" style="font-weight : bold">Date du début d intervention
-					  	{!! Form::date('Date_Debut_TTa', null, ['class' => 'form-control', 'placeholder' => 'Date du début d intervention']) !!}
-					  	<!-- {!! $errors->first('Date_TFCl', '<small class="help-block">:message</small>') !!} -->
+          <div class="form-group {!! $errors->has('Date_Debut_TTa') ? 'has-error' : '' !!}" style="font-weight : bold">Date du début d'intervention
+					  	{!! Form::date('Date_Debut_TTa', null, ['class' => 'form-control', 'placeholder' => 'Date du début d\'intervention']) !!}
+
 					</div>
-          <div class="form-group {!! $errors->has('Date_Fin_TTa') ? 'has-error' : '' !!}" style="font-weight : bold">Date de fin d intervention
-					  	{!! Form::date('Date_Fin_TTa', null, ['class' => 'form-control', 'placeholder' => 'Date de fin d intervention']) !!}
-					  	<!-- {!! $errors->first('Date_TFCl', '<small class="help-block">:message</small>') !!} -->
+          <div class="form-group {!! $errors->has('Date_Fin_TTa') ? 'has-error' : '' !!}" style="font-weight : bold">Date de fin d'intervention
+					  	{!! Form::date('Date_Fin_TTa', null, ['class' => 'form-control', 'placeholder' => 'Date de fin d\'intervention']) !!}
+
 					</div>
-          <div class="form-group {!! $errors->has('Date_TTa') ? 'has-error' : '' !!}" style="font-weight : bold">Edité le (Mettre une function pour editer à la date du jour)
-					  	{!! Form::date('Date_TTa', null, ['class' => 'form-control', 'placeholder' => 'Edite le']) !!}
-					  	<!-- {!! $errors->first('Date_TFCl', '<small class="help-block">:message</small>') !!} -->
+          <div class="form-group {!! $errors->has('Date_TTa') ? 'has-error' : '' !!}" style="font-weight : bold">Edité le
+					  	{!! Form::date('Date_TTa', null, ['class' => 'form-control', 'placeholder' => 'Edité le']) !!}
+
 					</div>
           <div class="form-group {!! $errors->has('NDevis_TDv') ? 'has-error' : '' !!}">
 					  	{!! Form::text('NDevis_TDv', null, ['class' => 'form-control', 'placeholder' => 'N° de devis']) !!}
 
 					</div>
-          <div class="form-group {!! $errors->has('NDevis_TDv') ? 'has-error' : '' !!}">
+          <div class="form-group {!! $errors->has('Devis_Type_TTa') ? 'has-error' : '' !!}">
 					  	{!! Form::text('Devis_Type_TTa', null, ['class' => 'form-control', 'placeholder' => 'Information paiement intervention']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('NCommande_TDv') ? 'has-error' : '' !!}">
+					  	{!! Form::text('NCommande_TDv', null, ['class' => 'form-control', 'placeholder' => 'N° de commande']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Date_Demande_TTa') ? 'has-error' : '' !!}" style="font-weight : bold">Demandé le
+					  	{!! Form::date('Date_Demande_TTa', null, ['class' => 'form-control', 'placeholder' => 'Demandé le']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Responsable_TCl') ? 'has-error' : '' !!}">Personne à contacter
+					  	{!! Form::text('Responsable_TCl', null, ['class' => 'form-control', 'placeholder' => 'Personne à contacter']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Machine_TTa') ? 'has-error' : '' !!}">Machine
+					  	{!! Form::text('Machine_TTa', null, ['class' => 'form-control', 'placeholder' => 'Machine']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Travaux_TTa') ? 'has-error' : '' !!}">Intervention à effectuer
+					  	{!! Form::text('Travaux_TTa', null, ['class' => 'form-control', 'placeholder' => 'Intervention à effectuer']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Observations_Camei_TTa') ? 'has-error' : '' !!}">Observation du technicien
+					  	{!! Form::text('Observations_Camei_TTa', null, ['class' => 'form-control', 'placeholder' => 'Observation du technicien']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Observations_Client_TTa') ? 'has-error' : '' !!}">Observation du client
+					  	{!! Form::text('Observations_Client_TTa', null, ['class' => 'form-control', 'placeholder' => 'Observation du client']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Responsable_TCl') ? 'has-error' : '' !!}">Responsable client
+					  	{!! Form::text('Responsable_TCl', null, ['class' => 'form-control', 'placeholder' => 'Responsable client']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Qte_Forfait_Nuit_TTa') ? 'has-error' : '' !!}">Quantité de forfait nuit/Quantité forfait deplacement
+					  	{!! Form::number('Qte_Forfait_Nuit_TTa', null, ['class' => 'form-control', 'placeholder' => 'Quantité de forfait nuit/Quantité forfait deplacement']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Prix_Forfait_Nuit_TTa') ? 'has-error' : '' !!}">Prix de forfait nuit/Prix forfait deplacement
+					  	{!! Form::number('Prix_Forfait_Nuit_TTa', null, ['class' => 'form-control', 'placeholder' => 'Prix de forfait nuit/Prix forfait deplacement']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_TVA_TTa') ? 'has-error' : '' !!}">Total
+					  	{!! Form::text('Total_TVA_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total']) !!}
+          </div>
 
-					</div>
+
 
 
 
