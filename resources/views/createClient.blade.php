@@ -45,7 +45,7 @@
 								<option selected="selected"  hidden="hidden" >Mode de reglement</option>
 								<option value="Chèque - Comptant">Chèque - Comptant</option>
 								<option value="Chèque - 30 jours fin du mois le 15">Chèque - 30 jours fin du mois le 15</option>
-                <option value="Chèque - Comptant">Chèque - Comptant</option>
+                <option value="Chèque - 60 jours net">Chèque - 60 jours net</option>
 								<option value="Espèces">Espèces</option>
                 <option value="Virement - Comptant">Virement - Comptant</option>
 								<option value="Virement - 30 jours fin du mois le 15">Virement - 30 jours fin du mois le 15</option>

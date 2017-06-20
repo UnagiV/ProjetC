@@ -27,8 +27,6 @@
           <div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
               <select class="form-control" name="Responsable_TCa">
 								<option selected="selected"  hidden="hidden" value ="{{$bonIntervention->Responsable_TCa}}" >{{$bonIntervention->Responsable_TCa}}</option>
-                <?php  ?>
-
                 @for ($i = 0; $i < $responsables->count(); $i++)
 								<option value="{{$responsables[$i]->Collaborateur_TCa}}">{{$responsables[$i]->Collaborateur_TCa}}</option>
                 @endfor
@@ -37,9 +35,6 @@
           <div class="form-group {!! $errors->has('Collaborateur_TCa') ? 'has-error' : '' !!}">
               <select class="form-control" name="Collaborateur_TCa">
 								<option selected="selected"  hidden="hidden" value="{{$bonIntervention->Collaborateur_TCa}}">{{$bonIntervention->Collaborateur_TCa}}</option>
-                <?php  ?>
-
-
                 @for ($i = 0; $i < $collaborateurs->count(); $i++)
 								<option value="{{$collaborateurs[$i]}}">{{$collaborateurs[$i]}}</option>
                 @endfor

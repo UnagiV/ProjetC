@@ -11,7 +11,7 @@
 			{{ Html::style('https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js') }}
 			{{ Html::style('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}
 		<![endif]-->
-		<style> textarea { resize: none; } </style>
+		<style> textarea { resize: none; }</style>
 	</head>
 	<body>
 

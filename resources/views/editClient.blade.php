@@ -42,10 +42,10 @@
 					</div>
           <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
 					  	<select class="form-control" name="Mdr_TCl">
-								<option selected="selected"  hidden="hidden" value>{{ $client->Mdr_TCl }}</option>
+								<option selected="selected"  hidden="hidden" value="{{ $client->Mdr_TCl }}">{{ $client->Mdr_TCl }}</option>
 								<option value="Chèque - Comptant">Chèque - Comptant</option>
 								<option value="Chèque - 30 jours fin du mois le 15">Chèque - 30 jours fin du mois le 15</option>
-                <option value="Chèque - Comptant">Chèque - Comptant</option>
+                <option value="Chèque - 60 jours net">Chèque - 60 jours net</option>
 								<option value="Espèces">Espèces</option>
                 <option value="Virement - Comptant">Virement - Comptant</option>
 								<option value="Virement - 30 jours fin du mois le 15">Virement - 30 jours fin du mois le 15</option>
@@ -88,12 +88,33 @@
 					  	{!! $errors->first('Tarif_Autom', '<small class="help-block">:message</small>') !!}
 					</div>
           <div class="form-group {!! $errors->has('Tarif_Etude') ? 'has-error' : '' !!}">Tarif M.O. Etude
-					  	{!! Form::text('Tarif_Etude', null, ['class' => 'form-control', 'placeholder' => 'Tarif M.O. EtudeTarif_Etude']) !!}
+					  	{!! Form::text('Tarif_Etude', null, ['class' => 'form-control', 'placeholder' => 'Tarif M.O. Etude']) !!}
 					  	{!! $errors->first('Tarif_Etude', '<small class="help-block">:message</small>') !!}
 					</div>
 
+          <?php $contactClient = DB::table('t_contact')->where('Ste_TCl',$client->Ste_TCl)->get();
 
-					T
+          ?>
+          @if($contactClient->count() > 0)
+          <div class="text-primary"><strong>
+            @for ($i = 0; $i < $contactClient->count(); $i++)
+            <p>Contact :{!! $contactClient[$i]->Contact_TCo !!}</p>
+            <p>Entité : {!! $contactClient[$i]->Entite_TCo !!}</p>
+            <p>Téléphone Contact : {!! $contactClient[$i]->Tel_TCo !!}</p>
+            <p>N° de poste : {!! $contactClient[$i]->N_Poste !!}</p>
+            <p>N° Indicatif : {!! $contactClient[$i]->Indicatif_TCo !!}</p>
+            <p>Portable Contact : {!! $contactClient[$i]->Port_TCo !!}</p>
+            <p>Adresse de Livraison : {!! $contactClient[$i]->Adr_Liv_TCl !!}</p>
+            <!-- {!! link_to_route('contact.edit','Modifier ce Contact',[$contactClient[$i]->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!} -->
+
+            @endfor
+          </strong></div>
+          @else
+          <td class="text-primary"><strong>"Pas de contact"</strong></td>
+          @endif
+
+
+
 						{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>
