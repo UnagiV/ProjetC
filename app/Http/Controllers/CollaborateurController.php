@@ -11,6 +11,8 @@ use App\Http\Requests\CollaborateurUpdateRequest;
 use App\Repositories\CollaborateurRepository;
 //////looool
 // coucou petite perruche
+
+use Illuminate\Support\Facades\DB;
 class CollaborateurController extends Controller
 {
 
@@ -52,9 +54,9 @@ class CollaborateurController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CollaborateurCreateRequest $request)
+    public function store(Request $request)
     {
-        $collaborateur =$this->collaborateurRepository->store($request::all());
+        $collaborateur = $this->collaborateurRepository->store($request::all());
 
         return redirect('collaborateur')->withOk("Le collaborateur " . $collaborateur->Collaborateur_TCa . " a été crée.");
 
@@ -82,8 +84,9 @@ class CollaborateurController extends Controller
     public function edit($Id_TCa)
     {
         $collaborateur = $this->collaborateurRepository->getById($Id_TCa);
+        $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
 
-        return view('editColla', compact('collaborateur'));
+        return view('editColla', compact('collaborateur','responsables'));
     }
 
     /**
