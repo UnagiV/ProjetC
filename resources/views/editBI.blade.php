@@ -97,9 +97,52 @@
           <div class="form-group {!! $errors->has('Prix_Forfait_Nuit_TTa') ? 'has-error' : '' !!}">Prix de forfait nuit/Prix forfait deplacement
 					  	{!! Form::number('Prix_Forfait_Nuit_TTa', null, ['class' => 'form-control', 'placeholder' => 'Prix de forfait nuit/Prix forfait deplacement']) !!}
           </div>
-          <div class="form-group {!! $errors->has('Total_TVA_TTa') ? 'has-error' : '' !!}">Total
-					  	{!! Form::text('Total_TVA_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total']) !!}
+          <div class="form-group {!! $errors->has('Total_Km_TTa') ? 'has-error' : '' !!}">Prix par trajet
+					  	{!! Form::number('Total_Km_TTa', null, ['class' => 'form-control', 'placeholder' => 'Prix par trajet']) !!}
           </div>
+          <div class="form-group {!! $errors->has('PeageTTC_TTa') ? 'has-error' : '' !!}">Prix du péage par trajet
+					  	{!! Form::number('PeageTTC_TTa', null, ['class' => 'form-control', 'placeholder' => 'Prix du péage par trajet']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Prix_Km_TTa') ? 'has-error' : '' !!}">Prix du kilomètre
+					  	{!! Form::number('Prix_Km_TTa', null, ['class' => 'form-control', 'placeholder' => 'Prix du kilomètre']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_Trajet_U_TTa') ? 'has-error' : '' !!}">Nombre de trajets
+					  	{!! Form::number('Total_Trajet_U_TTa', null, ['class' => 'form-control', 'placeholder' => 'Nombre de trajets']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('NFacture_TFCl') ? 'has-error' : '' !!}">Numéro de facture assosié
+					  	{!! Form::text('NFacture_TFCl', null, ['class' => 'form-control', 'placeholder' => 'Numéro de facture assosié']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Date_TFCl') ? 'has-error' : '' !!}" style="font-weight : bold">Date de facturation
+					  	{!! Form::date('Date_TFCl', null, ['class' => 'form-control', 'placeholder' => 'Date de facturation']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_MO_HT_TTa') ? 'has-error' : '' !!}">Total main d'oeuvre HT
+					  	{!! Form::number('Total_MO_HT_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total main d\'oeuvre HT']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_Achat_HT_TTa') ? 'has-error' : '' !!}">Total achat fournitures HT
+					  	{!! Form::number('Total_Achat_HT_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total achat fournitures HT']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_Vente_HT_TTa') ? 'has-error' : '' !!}">Total fournitures HT
+              {!! Form::number('Total_Vente_HT_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total fournitures HT']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_Trajet_HT_TTa') ? 'has-error' : '' !!}">Total trajet HT
+              {!! Form::number('Total_Trajet_HT_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total trajet HT']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_Depl_HT_TTa') ? 'has-error' : '' !!}">Total deplacement (on sait pas ce que c'est)
+              {!! Form::number('Total_Depl_HT_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total deplacement (on sait pas ce que c\'est)']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_HT_TTa') ? 'has-error' : '' !!}">Total HT
+              {!! Form::number('Total_HT_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total HT']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('TVA_TTa') ? 'has-error' : '' !!}">Taux TVA
+              {!! Form::number('TVA_TTa', null, ['class' => 'form-control', 'placeholder' => 'Taux TVA']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_TVA_TTa') ? 'has-error' : '' !!}">Total TVA
+              {!! Form::number('Total_TVA_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total TVA']) !!}
+          </div>
+          <div class="form-group {!! $errors->has('Total_TTC_TTa') ? 'has-error' : '' !!}">Total TTC
+              {!! Form::number('Total_TTC_TTa', null, ['class' => 'form-control', 'placeholder' => 'Total TTC']) !!}
+          </div>
+
 
 
 
