@@ -13,7 +13,7 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Id Client</th>
+						<th>Id Contact</th>
 						<th>Client</th>
             <th>Entité</th>
             <th>Adresse de livraison</th>

@@ -54,7 +54,7 @@
           </div>
 
           <div class="form-group {!! $errors->has('Information_TCl') ? 'has-error' : '' !!}">Information
-					  	{!! Form::text('Information_TCl', null, ['class' => 'form-control', 'placeholder' => 'Information']) !!}
+					  	{!! Form::textarea('Information_TCl', null, ['class' => 'form-control', 'placeholder' => 'Information']) !!}
 					  	<!-- {!! $errors->first('Information_TCl', '<small class="help-block">:message</small>') !!} -->
 					</div>
           <div class="form-group {!! $errors->has('Siret_TCl') ? 'has-error' : '' !!}">Siret
