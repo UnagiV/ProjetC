@@ -43,6 +43,10 @@
                 @endfor
 							</select>
           </div>
+					<?php $bonInterFacture = DB::table('T_Taches')->where('Ste_TCl',$facture->Ste_TCl)->get();
+
+          ?>
+					@
 
 
 

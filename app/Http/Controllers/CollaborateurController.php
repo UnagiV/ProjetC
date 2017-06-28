@@ -45,6 +45,7 @@ class CollaborateurController extends Controller
      */
     public function create()
     {
+      
         return view('createColla');
     }
 

@@ -40,7 +40,7 @@
 					  	{!! Form::text('EMail_TCl', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
 					  	{!! $errors->first('EMail_TCl', '<small class="help-block">:message</small>') !!}
 					</div>
-          <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
+          <!-- <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
 					  	<select class="form-control" name="Mdr_TCl">
 								<option selected="selected"  hidden="hidden" >Mode de reglement</option>
 								<option value="Chèque - Comptant">Chèque - Comptant</option>
@@ -50,6 +50,18 @@
                 <option value="Virement - Comptant">Virement - Comptant</option>
 								<option value="Virement - 30 jours fin du mois le 15">Virement - 30 jours fin du mois le 15</option>
                 <option value="Virement - 60 jours net">Virement - 60 jours net</option>
+							</select>
+          </div> -->
+          <?php $reglement = DB::table('T_Mode_Reglement')->where('Mdr_TCl',$client->Ste_TCl)->get();
+          ?>
+
+
+          <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
+              <select class="form-control" name="Mdr_TCl">
+								<option selected="selected"  hidden="hidden" value ="{{$client->Mdr_TCl}}" >{{$client->Mdr_TCl}}</option>
+                @for ($i = 0; $i < $reglement->count(); $i++)
+								<option value="{{$reglement[$i]}}">{{$reglement[$i]}}</option>
+                @endfor
 							</select>
           </div>
 
