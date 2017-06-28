@@ -4,7 +4,7 @@
     <div class="col-sm-offset-3 col-sm-5">
     	<br>
 		<div class="panel panel-primary">
-			<div class="panel-heading">Fiche du Client</div>
+			<div class="panel-heading">Fiche de Mode de règlement</div>
 			<div class="panel-body">
         <p>N°: {{ $modeReglement->Id_Mdr }}</p>
         <p>Description du mode de règlement : {{ $modeReglement->Des_Mdr }}</p>

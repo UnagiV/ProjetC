@@ -46,7 +46,7 @@
 							<td>{!! link_to_route('chargecolla.edit', 'Modifier', [$chargeColla->Id_Mdr], ['class' => 'btn btn-warning btn-block']) !!}</td>
 							<td>
 								{!! Form::open(['method' => 'DELETE', 'route' => ['chargecolla.destroy', $chargeColla->Id_Mdr]]) !!}
-									{!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce Mode de Règlement ?\')']) !!}
+									{!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer cette charge ?\')']) !!}
 								{!! Form::close() !!}
 							</td>
 						</tr>
