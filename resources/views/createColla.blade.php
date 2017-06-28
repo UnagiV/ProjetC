@@ -34,9 +34,10 @@
 
 					<div class="form-group  {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
 							<select class="form-control" name="Responsable_TCa">
-								<option selected="selected"  hidden="hidden" value={{Responsable_TCa}}>Responsable</option>
-								<option value="Cédric Dupuis">Cédric Dupuis</option>
-								<option value="Bastien Jambon">Bastien Jambon</option>
+								<option selected="selected"  hidden="hidden" >Responsable</option>
+								@for ($i = 0; $i < $responsables->count(); $i++)
+								<option value="{{$responsables[$i]->Collaborateur_TCa}}">{{$responsables[$i]->Collaborateur_TCa}}</option>
+                @endfor
 							</select>
 							{!! $errors->first('Responsable_TCa', '<small class="help-block">:message</small>') !!}
 					</div>

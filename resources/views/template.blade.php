@@ -24,17 +24,7 @@
 	<button class="btn btn-primary" type="button">Stock</button>
 	<button class="btn btn-primary" type="button">Recherche</button>
 
-		<table class="col-sm-offset-4 col-sm-4">
-			<tbody>
-				<button class="btn btn-primary" type="button">DashBoard :</button>
-				<button class="btn btn-primary" type="button">Bon d'Intervention</button>
-				<button class="btn btn-primary" type="button">Devis</button>
-				<button class="btn btn-primary" type="button">Suivi de Chantier</button>
-				<button class="btn btn-primary" type="button">Factures</button>
-				<button class="btn btn-primary" type="button">Annuaire Clients</button>
-				<button class="btn btn-primary" type="button">Fiche Collaborateurs</button>
-				<button class="btn btn-primary" type="button">Stock</button>
-				<button class="btn btn-primary" type="button">Recherche</button>
+
 
 </header>
 	<body >

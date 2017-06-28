@@ -28,7 +28,7 @@
 								<option value="1000">1000</option>
 							</select>
 					</div>
-          
+
           <div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
               <select class="form-control" name="Responsable_TCa">
 								<option selected="selected"  hidden="hidden" value ="{{ $collaborateur->Responsable_TCa }}" >{{ $collaborateur->Responsable_TCa }}</option>

@@ -9,8 +9,6 @@ use App\Http\Requests\CollaborateurCreateRequest;
 use App\Http\Requests\CollaborateurUpdateRequest;
 
 use App\Repositories\CollaborateurRepository;
-//////looool
-// coucou petite perruche
 
 use Illuminate\Support\Facades\DB;
 class CollaborateurController extends Controller
@@ -45,7 +43,8 @@ class CollaborateurController extends Controller
      */
     public function create()
     {
-        return view('createColla');
+        $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
+        return view('createColla', compact('responsables'));
     }
 
     /**
