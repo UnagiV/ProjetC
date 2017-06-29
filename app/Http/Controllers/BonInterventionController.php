@@ -84,7 +84,8 @@ class BonInterventionController extends Controller
       $bonIntervention = $this->bonInterventionRepository->getById($Id_TTa);
       $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
       $collaborateurs = DB::table('t_collaborateurs')->pluck('Collaborateur_TCa');
-
+      $bonIntervention->Total_TVA_TTa = round($bonIntervention->Total_TVA_TTa, 4);
+      $bonIntervention->Total_TTC_TTa = round($bonIntervention->Total_TTC_TTa, 4);
       return view('editBI', compact('bonIntervention', 'responsables', 'collaborateurs'));
     }
 
