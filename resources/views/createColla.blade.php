@@ -23,7 +23,7 @@
 					</div>
           <div class="form-group  {!! $errors->has('Acces_TCa') ? 'has-error' : '' !!}">
 							<select class="form-control" name="Acces_TCa">
-								<option selected="selected"  hidden="hidden" value>Acces</option>
+								<option selected="selected"  hidden="hidden">Acces</option>
 								<option value="9999">9999</option>
 								<option value="9000">9000</option>
 								<option value="4000">4000</option>

@@ -43,7 +43,9 @@ class BonInterventionController extends Controller
      */
     public function create()
     {
-        return view('createBI');
+        $boninterventionLast = DB::table('t_taches')->max('Id_TTa');
+        $boninterventionEnCours = $boninterventionLast + 1;
+        return view('createBI', compact('boninterventionEnCours'));
     }
 
     /**
