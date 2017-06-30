@@ -44,6 +44,21 @@
 							</select>
           </div>
 
+					<div class="form-group }">Bon d'Intervention
+              <select class="form-control" name="BonIntervention">
+								<option selected="selected"  hidden="hidden" value ="" >Bon d'Intervention</option>
+                @for ($i = 0; $i < $boninter->count(); $i++)
+								@if($boninter[$i]->Facturation_TTa == 0)
+
+								<option value="{{$boninter[$i]->Ste_TCl}}">{{$boninter[$i]->Ste_TCl}}</option>
+
+								@endif
+								@endfor
+							</select>
+          </div>
+
+
+
 
 
 

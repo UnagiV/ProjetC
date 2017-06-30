@@ -44,7 +44,8 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('createClient');
+        $reglement = DB::table('T_Mode_Reglement')->pluck('Des_Mdr');
+        return view('createClient', compact('reglement'));
     }
 
     /**
@@ -85,10 +86,12 @@ class ClientController extends Controller
      */
     public function edit($Id_TCl)
     {
+      $reglement = DB::table('T_Mode_Reglement')->pluck('Des_Mdr');
+
       $client = $this->clientRepository->getById($Id_TCl);
       // $modifContact = DB::table('t_contact')->pluck('Id_TCo');
 
-      return view('editClient', compact('client'));
+      return view('editClient', compact('client', 'reglement'));
     }
 
     /**

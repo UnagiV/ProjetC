@@ -43,8 +43,10 @@ class CollaborateurController extends Controller
      */
     public function create()
     {
+
         $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
         return view('createColla', compact('responsables'));
+
     }
 
     /**
