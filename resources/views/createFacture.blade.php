@@ -9,7 +9,12 @@
 				<div class="col-sm-12">
 					{!! Form::open(['route' => 'facture.store', 'class' => 'form-horizontal panel']) !!}
 
-					<div class="form-group {!! $errors->has('Ste_TCl') ? 'has-error' : '' !!}">Nom du Client
+					<div class="form-group">
+                  <label>N° de Facture <input class="form-control" placeholder= {{$dateNow}}-{{$nouvelleFacture}} disabled="" type="text"></label>
+
+        </div>
+
+					<div class="form-group">Nom du Client
               <select class="form-control" name="Ste_TCl">
 								<option selected="selected"  hidden="hidden" >Nom du Client</option>
                 @for($i = 0; $i < $entreprise->count(); $i++)
@@ -17,6 +22,14 @@
                 @endfor
 							</select>
           </div>
+
+					<div class="form-group">Contact Client
+						{{Form::text('Contact_TCo', null, ['methode' => 'getBySci',
+						'class' =>'form-control', 'placeholder'=> 'Contact Client']) }}
+
+					</div>
+
+
 
 					<!-- <div class="form-group {!! $errors->has('Collaborateur_TCa') ? 'has-error' : '' !!}">
 						{!! Form::text('Collaborateur_TCa', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
@@ -37,7 +50,7 @@
 					</div> -->
 					<div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">Responsable
               <select class="form-control" name="Responsable_TCa">
-								<option selected="selected"  hidden="hidden" value ="" >Responsable</option>
+								<option selected="selected"  hidden="hidden">Responsable</option>
                 @for ($i = 0; $i < $responsables->count(); $i++)
 								<option value="{{$responsables[$i]->Collaborateur_TCa}}">{{$responsables[$i]->Collaborateur_TCa}}</option>
                 @endfor
@@ -46,11 +59,14 @@
 
 					<div class="form-group }">Bon d'Intervention
               <select class="form-control" name="BonIntervention">
-								<option selected="selected"  hidden="hidden" value ="" >Bon d'Intervention</option>
+								<option selected="selected"  hidden="hidden">Bon d'Intervention</option>
                 @for ($i = 0; $i < $boninter->count(); $i++)
 								@if($boninter[$i]->Facturation_TTa == 0)
 
-								<option value="{{$boninter[$i]->Ste_TCl}}">{{$boninter[$i]->Ste_TCl}}</option>
+								<!-- dans la combobox il y a pour le moment le nom de la societe et la date d'intervention -->
+								<option value="{{$boninter[$i]->Ste_TCl}} {{$boninter[$i]->Date_TTa}}">{{$boninter[$i]->Ste_TCl}}
+									{{$boninter[$i]->Date_TTa}}</option>
+
 
 								@endif
 								@endfor

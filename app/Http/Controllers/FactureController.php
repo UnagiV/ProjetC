@@ -7,6 +7,8 @@ use Request;
 use App\Repositories\FactureRepository;
 use Illuminate\Support\Facades\DB;
 
+use Carbon\Carbon;
+
 class FactureController extends Controller
 {
     protected$factureRepository;
@@ -41,8 +43,12 @@ class FactureController extends Controller
       $entreprise = DB::table('T_Clients')->pluck('Ste_TCl');
       $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
       $boninter = DB::table('T_Taches')->get();
+      $dateNow = date("Y");
+      $factureLast = DB::table('T_Factures')->max('Id_TFCl');
+      $nouvelleFacture = $factureLast + 1;
 
-        return view('createFacture', compact('responsables','boninter','entreprise') );
+        return view('createFacture', compact('responsables','boninter',
+        'entreprise','factureLast','nouvelleFacture','dateNow') );
     }
 
     /**
