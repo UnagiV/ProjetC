@@ -40,7 +40,7 @@ class FactureController extends Controller
     {
       $entreprise = DB::table('T_Clients')->pluck('Ste_TCl');
       $responsables = DB::table('t_collaborateurs')->where('Acces_TCa', '9999')->get();
-      $boninter = DB::table('T_Taches')->where('Ste_TCl')->get();
+      $boninter = DB::table('T_Taches')->get();
 
         return view('createFacture', compact('responsables','boninter','entreprise') );
     }

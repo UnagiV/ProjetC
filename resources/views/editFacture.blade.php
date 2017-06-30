@@ -94,6 +94,11 @@
               <p>Adresse de Livraison : {!! $boninter[$i]->Adr_Liv_TCl !!}</p>
               <p>Contact Client : {!! $boninter[$i]->Contact_TCo !!}</p>
               <p>Collaborateur : {!! $boninter[$i]->Collaborateur_TCa !!}</p>
+              <p>Total hors taxe : {!! $boninter[$i]->Total_HT_TTa !!}</p>
+              <p>Total TVA : {!! $boninter[$i]->Total_TVA_TTa !!}</p>
+              <p>Total TTC: {!! $boninter[$i]->Total_TTC_TTa !!}</p>
+              {!! link_to_route('bonintervention.edit','Modifier le bon intervention',[$boninter[$i]->Id_TTa], ['class' => 'btn btn-warning btn-block']) !!}
+              {!! link_to_route('bonintervention.index','Ajouter un bon intervention',[$boninter[$i]->Id_TTa], ['class' => 'btn btn-warning btn-block']) !!}
 
 
             @endfor

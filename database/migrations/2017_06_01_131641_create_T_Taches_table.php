@@ -53,10 +53,10 @@ class CreateTTachesTable extends Migration {
 			$table->float('Total_Vente_HT_TTa', 10, 0)->nullable()->default(0);
 			$table->float('Total_Trajet_HT_TTa', 10, 0)->nullable()->default(0);
 			$table->float('Total_Depl_HT_TTa', 10, 0)->nullable()->default(0);
-			$table->float('Total_HT_TTa', 10, 0)->nullable()->default(0);
+			$table->float('Total_HT_TTa', 10, 4)->nullable()->default(0);
 			$table->float('TVA_TTa', 10, 0)->nullable()->default(0.2);
-			$table->float('Total_TVA_TTa', 10, 0)->nullable()->default(0);
-			$table->float('Total_TTC_TTa', 10, 0)->nullable()->default(0);
+			$table->float('Total_TVA_TTa', 10, 4)->nullable()->default(0);
+			$table->float('Total_TTC_TTa', 10, 4)->nullable()->default(0);
 		});
 	}
 
