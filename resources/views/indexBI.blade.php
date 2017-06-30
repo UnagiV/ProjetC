@@ -30,12 +30,10 @@
 						<tr>
 							<td>{!! $tache->Id_TTa !!}</td>
 							<td class="text-primary"><strong>{!! $tache->Ste_TCl !!}</strong></td>
-              <td class="text-primary"><strong>{!! date('d-m-Y', strtotime($tache->Date_Debut_TTa)) !!}</strong></td>
-              <td class="text-primary">
-                <strong>
-                  {{  date('d-m-Y', strtotime($tache->Date_Fin_TTa)) }}
-                </strong>
-              </td>
+              <!-- mise en place de if car si des dates ne sont pas saisies que
+              l'on affiche autre chose que 01/01/1970 -->
+              <td class="text-primary"><strong>@if($tache->Date_Debut_TTa == !0){!! date('d-m-Y', strtotime($tache->Date_Debut_TTa)) !!}@endif</strong></td>
+              <td class="text-primary"><strong>@if($tache->Date_Fin_TTa == !0){{ date('d-m-Y', strtotime($tache->Date_Fin_TTa)) }}@endif</strong></td>
               <td class="text-primary"><strong>{!! $tache->Responsable_TCa !!}</strong></td>
               <td class="text-primary"><strong>{!! $tache->Collaborateur_TCa !!}</strong></td>
               <td class="text-primary"><strong>{!! $tache->Travaux_TTa !!}</strong></td>
@@ -46,14 +44,14 @@
 									{!! Form::submit('Supprimer', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce bon ?\')']) !!}
 								{!! Form::close() !!}
 							</td>
-
-              @if($tache->boninterventionFournitures->count() > 0)
+              <!-- pour la presentation j'ai mis cette partie en commentaire car on n'a pas forcement besoin de le voir -->
+              <!-- @if($tache->boninterventionFournitures->count() > 0)
               <td>
                 @for ($i = 0; $i < $tache->boninterventionFournitures->count(); $i++)
                 {{ $tache->boninterventionFournitures[$i]->Class_TTaDFo}}
                 @endfor
               </td>
-              @endif
+              @endif -->
 
 
 

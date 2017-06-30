@@ -14,8 +14,8 @@ class BonInterventionController extends Controller
 {
 
     protected $bonInterventionRepository;
-
-    protected $nbrPerPage = 10;
+    // pour le screen j'ai mis 5 mais il etait à 10 à la base
+    protected $nbrPerPage = 5;
 
     public function __construct (BonInterventionRepository $bonInterventionRepository)
     {

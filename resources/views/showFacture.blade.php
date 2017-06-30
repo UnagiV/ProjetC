@@ -1,29 +1,29 @@
 @extends('template')
 
 @section('contenu')
-    <div class="col-sm-offset-3 col-sm-5">
+    <div class="col-sm-offset-2 col-sm-8">
     	<br>
 		<div class="panel panel-primary">
 			<div class="panel-heading">Fiche de la Facture</div>
 			<div class="panel-body">
-        <p>N°Facture : {{ $facture->NFacture_TFCl }} Nom du client : {{ $facture->Ste_TCl }}</p>
-        <!-- <p>Nom du client : {{ $facture->Ste_TCl }}</p> -->
-        <p>Contact Client : {{ $facture->Contact_TCo }}</p>
-        <p>Etablie par : {{ $facture->Responsable_TCa }}</p>
-        <p>Mode de reglement : {{ $facture->Mdr_TCl }}</p>
-        <p>Adresse de Facturation : {{ $facture->Adr_Fact_TCl }}</p>
-        <p>Date de la Facturation : {{ date('d-m-Y', strtotime($facture->Date_TFCl)) }}</p>
-        <p>Date d'Echéance  : {{ date('d-m-Y', strtotime($facture->Ech_TFCl)) }}</p>
-        <p>Date de Reglement : {{ date('d-m-Y', strtotime($facture->Paid_TFCl)) }}</p>
-        <p>Avoir : {{ $facture->Avoir_TFCl }}</p>
-        <p>Note : {{ $facture->BlNote_TFCl }}</p>
-        <p>Total Main d'Oeuvre HT : {{round($facture->Total_MO_HT_TFCl,2) }} €</p>
-        <p>Total Vente HT : {{round($facture->Total_Vente_HT_TFCl,2) }} €</p>
-        <p>Total Trajet HT : {{round($facture->Total_Trajet_HT_TFCl,2) }} €</p>
-        <p>Total Deplacement HT : {{round($facture->Total_Depl_HT_TFCl,2) }} €</p>
-        <p>Total HT : {{round($facture->Total_HT_TFCl,2) }} €</p>
-        <p>Total TVA : {{round($facture->Total_TVA_TFCl,2) }} €</p>
-        <p>Total TTC : {{round($facture->Total_TTC_TFCl,2) }} €</p>
+        <p><strong>N°Facture :</strong> {{ $facture->NFacture_TFCl }} <strong>Nom du client :</strong>  {{ $facture->Ste_TCl }}</p>
+
+        <p><strong>Contact Client : </strong> {{ $facture->Contact_TCo }} <strong>Etablie par :</strong>  {{ $facture->Responsable_TCa }}</p>
+
+        <p><strong>Mode de reglement : </strong> {{ $facture->Mdr_TCl }}
+          <strong>Avoir : </strong> {{ $facture->Avoir_TFCl }}</p>
+        <p><strong>Adresse de Facturation :</strong>  {{ $facture->Adr_Fact_TCl }}</p>
+        <p><strong>Date de la Facturation :</strong>  {{ date('d-m-Y', strtotime($facture->Date_TFCl)) }}
+          <strong>Date d'Echéance  :</strong>  {{ date('d-m-Y', strtotime($facture->Ech_TFCl)) }}
+          <strong>Date de Reglement : </strong> {{ date('d-m-Y', strtotime($facture->Paid_TFCl)) }}</p>
+        <p><strong>Note :</strong>  {{ $facture->BlNote_TFCl }}</p>
+        <p><strong>Total Main d'Oeuvre HT :</strong>  {{round($facture->Total_MO_HT_TFCl,2) }} €
+          <strong>Total Vente HT : </strong> {{round($facture->Total_Vente_HT_TFCl,2) }} €
+          <strong>Total Trajet HT :</strong>  {{round($facture->Total_Trajet_HT_TFCl,2) }} €</p>
+        <p><strong>Total Deplacement HT :</strong>  {{round($facture->Total_Depl_HT_TFCl,2) }} €</p>
+        <p><strong>Total HT : </strong> {{round($facture->Total_HT_TFCl,2) }} €
+            <strong>Total TVA :</strong>  {{round($facture->Total_TVA_TFCl,2) }} €
+            <strong>Total TTC :</strong>  {{round($facture->Total_TTC_TFCl,2) }} €</p>
   </div>
 		</div>
 		<a href="javascript:history.back()" class="btn btn-primary">

@@ -51,8 +51,8 @@
               <!-- <td class="text-primary"><strong>{!! $facture->Mdr_TCl !!}</strong></td> -->
               <!-- <td class="text-primary"><strong>{!! $facture->Adr_Fact_TCl !!}</strong></td> -->
               <td class="text-primary"><strong>{!! date('d-m-Y', strtotime($facture->Date_TFCl)) !!}</strong></td>
-              <td class="text-primary"><strong>{!! date('d-m-Y', strtotime($facture->Ech_TFCl)) !!}</strong></td>
-              <td class="text-primary"><strong>{!! date('d-m-Y', strtotime($facture->Paid_TFCl)) !!}</strong></td>
+              <td class="text-primary"><strong>@if($facture->Ech_TFCl == !0){!! date('d-m-Y', strtotime($facture->Ech_TFCl)) !!}@endif</strong></td>
+              <td class="text-primary"><strong>@if($facture->Paid_TFCl == !0){!! date('d-m-Y', strtotime($facture->Paid_TFCl)) !!}@endif</strong></td>
               <!-- <td class="text-primary"><strong>{!! $facture->Avoir_TFCl !!}</strong></td> -->
               <!-- <td class="text-primary"><strong>{!! $facture->BlNote_TFCl !!}</strong></td> -->
               <!-- <td class="text-primary"><strong>{!! $facture->Total_MO_HT_TFCl !!}</strong></td> -->
