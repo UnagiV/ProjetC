@@ -40,7 +40,7 @@
 					  	{!! Form::text('EMail_TCl', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
 					  	{!! $errors->first('EMail_TCl', '<small class="help-block">:message</small>') !!}
 					</div>
-          
+
           <div class="form-group {!! $errors->has('Mdr_TCl') ? 'has-error' : '' !!}">Mode de reglement
               <select class="form-control" name="Mdr_TCl">
 								<option selected="selected"  hidden="hidden" value ="{{$client->Mdr_TCl}}" >{{$client->Mdr_TCl}}</option>
@@ -109,11 +109,18 @@
 
           </strong></div>
           @else
+
           <td class="text-primary"><strong>"Pas de contact"</strong></td>
+          <!-- {!! link_to_route('contact.create','Ajouter un Contact',[$contactClient[$i]->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!} -->
+
           @endif
+          <!-- @if($contactClient->count() == 0)
+          <div class="text-primary">
+            {!! link_to_route('contact.create','Ajouter un Contact',[$contactClient[$i]->Id_TCo], ['class' => 'btn btn-warning btn-block']) !!}
+          </div>
 
 
-
+          @endif -->
 						{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>
