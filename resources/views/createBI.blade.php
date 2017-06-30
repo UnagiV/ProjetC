@@ -2,61 +2,70 @@
 
 @section('contenu')
 
-<div class="col-sm-offset-4 col-sm-4">
+<div class="col-sm-offset-1 col-sm-10">
   <br>
   <div class="panel panel-primary">
     <div class="panel-heading">Création d'un bon d'intervention</div>
     <div class="panel-body">
       <div class="col-sm-12">
+
         {!! Form::open(['route' => 'bonintervention.store', 'class' => 'form-horizontal panel']) !!}
-        <div class="form-group {!! $errors->has('Collaborateur_TCa') ? 'has-error' : '' !!}">
-          {!! Form::text('Collaborateur_TCa', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
-          {!! $errors->first('Collaborateur_TCa', '<small class="help-block">:message</small>') !!}
+
+
+        <div>
+        <div class="form-group col-sm-6">
+                  <label>Bon d'intervention en cours</label>
+                  <input class="form-control" placeholder= "{{$boninterventionEnCours}}" disabled="" type="text">
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
+                  <div>aaa</div>
         </div>
-        <div class="form-group {!! $errors->has('Date_In_TCa') ? 'has-error' : '' !!}">
-            {!! Form::date('Date_In_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date entrée']) !!}
-            {!! $errors->first('Date_In_TCa', '<small class="help-block">:message</small>') !!}
 
         </div>
-        <div class="form-group">
-            {!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date Sortie']) !!}
+
+        <div class="form-group col-sm-6"  style="margin-left: 30px;">
+
+                  <p><strong>Date</strong></p>
+                  <!-- <input type="text" id="datepicker" value={{'Date_TTa'}}> -->
+                  {!! Form::date('Date_TTa', null, ['class' => 'form-control', 'placeholder' => 'Date', 'id' => 'datepicker']) !!}
 
         </div>
-        <div class="form-group  {!! $errors->has('Acces_TCa') ? 'has-error' : '' !!}">
-            <select class="form-control" name="Acces_TCa">
-              <option selected="selected"  hidden="hidden" value>Acces</option>
-              <option value="9999">9999</option>
-              <option value="9000">9000</option>
-              <option value="4000">4000</option>
-              <option value="1000">1000</option>
-            </select>
-            {!! $errors->first('Acces_TCa', '<small class="help-block">:message</small>') !!}
+        <div class="form-group col-sm-6"  style="margin-left: 30px;">
+
+                  <p><strong>Date de début</strong></p>
+                  <!-- <input type="text" id="datepicker" value={{'Date_TTa'}}> -->
+                  {!! Form::date('Date_Debut_TTa', null, ['class' => 'form-control', 'placeholder' => 'Date de début', 'id' => 'datepicker2']) !!}
+
         </div>
 
-        <div class="form-group  {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">
-            <select class="form-control" name="Responsable_TCa">
-              <option selected="selected"  hidden="hidden" value={{Responsable_TCa}}>Responsable</option>
-              <option value="Cédric Dupuis">Cédric Dupuis</option>
-              <option value="Bastien Jambon">Bastien Jambon</option>
-            </select>
-            {!! $errors->first('Responsable_TCa', '<small class="help-block">:message</small>') !!}
-        </div>
 
-        <div class="form-group">
-          <div class="checkbox">
-            <label>
-              {!! Form::checkbox('TR_TCa', 1, null) !!}Ticket Restaurant
-            </label>
-          </div>
-        </div>
-        {!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
+
+
+
+
+
+
+
+
+        <div class="col-sm-12">
+        {!! Form::submit('Envoyer', ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
+        </div>
       </div>
     </div>
   </div>
+  <div>
   <a href="javascript:history.back()" class="btn btn-primary">
     <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
   </a>
+</div>
 </div>
 
 @endsection

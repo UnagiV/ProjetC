@@ -8,10 +8,7 @@
 			<div class="panel-body">
 				<div class="col-sm-12">
 					{!! Form::model($bonIntervention, ['route' => ['bonintervention.update', $bonIntervention->Id_TTa], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
-					<div class="form-group {!! $errors->has('Id_TTa') ? 'has-error' : '' !!}">
-					  	{!! Form::text('Id_TTa', null, ['class' => 'form-control', 'placeholder' => 'N° Bon d intervention']) !!}
-					  	{!! $errors->first('Id_TTa', '<small class="help-block">:message</small>') !!}
-					</div>
+					
           <div class="form-group {!! $errors->has('Ste_TCl') ? 'has-error' : '' !!}">
 					  	{!! Form::text('Ste_TCl', null, ['class' => 'form-control', 'placeholder' => 'Nom du client']) !!}
 
