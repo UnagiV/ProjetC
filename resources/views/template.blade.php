@@ -14,6 +14,7 @@
 		<style> textarea { resize: none; }</style>
 	</head>
 <header class="col-sm-offset-1 col-sm-10">
+	<br>
 <button class="btn btn-primary" type="button"> DashBoard </button>
 	<a href="{{ URL::route('bonintervention.index') }}" class="btn btn-primary"> Bon d'Intervention </a>
 	<button class="btn btn-primary" type="button">Devis</button>
@@ -23,6 +24,8 @@
 	<a href="{{ URL::route('collaborateur.index') }}" class="btn btn-primary"> Fiche Collaborateurs </a>
 	<button class="btn btn-primary" type="button">Stock</button>
 	<button class="btn btn-primary" type="button">Recherche</button>
+	<br>
+	<br>
 
 
 
