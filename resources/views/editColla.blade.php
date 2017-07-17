@@ -17,7 +17,7 @@
 					  	{!! $errors->first('Date_In_TCa', '<small class="help-block">:message</small>') !!}
 					</div>
           <div class="form-group">
-					  	{!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date Sortie']) !!}
+					  	{!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date Sortie','id' => 'datepicker2']) !!}
 					</div>
           <div class="form-group">
 							<select class="form-control" name="Acces_TCa">

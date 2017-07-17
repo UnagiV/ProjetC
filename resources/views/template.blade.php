@@ -5,8 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>CAMEI</title>
-		{!! Html::style('https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') !!}
-		{!! Html::style('https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css') !!}
+		{!! Html::style('https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') !!}
+		{!! Html::style('https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css') !!}
 		<!--[if lt IE 9]>
 			{{ Html::style('https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js') }}
 			{{ Html::style('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}
@@ -65,17 +65,27 @@ $( function() {
 } );
 </script>
 	</head>
-<header class="col-sm-offset-1 col-sm-10">
+<header class="col-sm-offset-0 col-sm-12">
 	<br>
-<button class="btn btn-primary" type="button"> DashBoard </button>
+	<a href="{{ url('/') }}" class="btn btn-primary"> Accueil </a>
+	<button class="btn btn-primary" type="button"> DashBoard  </button>
 	<a href="{{ URL::route('bonintervention.index') }}" class="btn btn-primary"> Bon d'Intervention </a>
-	<button class="btn btn-primary" type="button">Devis</button>
-	<button class="btn btn-primary" type="button">Suivi de Chantier</button>
+	<button class="btn btn-primary" type="button"> Devis </button>
+	<button class="btn btn-primary" type="button"> Suivi de Chantier </button>
 	<a href="{{ URL::route('facture.index') }}" class="btn btn-primary"> Factures </a>
 	<a href="{{ URL::route('client.index') }}" class="btn btn-primary"> Annuaire Clients </a>
 	<a href="{{ URL::route('collaborateur.index') }}" class="btn btn-primary"> Fiche Collaborateurs </a>
-	<button class="btn btn-primary" type="button">Stock</button>
-	<button class="btn btn-primary" type="button">Recherche</button>
+	<button class="btn btn-primary" type="button"> Stock </button>
+	<button class="btn btn-primary" type="button"> Recherche </button>
+	<!-- pour faire apparaitre le nom de l'user -->
+	<!-- <a href="#" class="btn btn-primary">{{ Auth::user()->name }}</a> -->
+	<a href="{{ route('logout') }}" onclick="event.preventDefault();
+		document.getElementById('logout-form').submit();" class="btn btn-primary">
+			Se Déconnecter </a>
+			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					{{ csrf_field() }}
+			</form>
+
 	<br>
 	<br>
 

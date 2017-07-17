@@ -14,10 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('bonintervention','BonInterventionController');
-Route::resource('chargecolla','ChargeCollaController');
-Route::resource('client','ClientController');
-Route::resource('collaborateur','CollaborateurController');
-Route::resource('contact','ContactController');
-Route::resource('facture','FactureController');
-Route::resource('modereglement','ModeReglementController');
+
+
+Auth::routes();
+
+Route::get('home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    //Inscrit toutes les routes où il faut être connecté pour y accéder
+   //Par exemple
+   Route::resource('bonintervention','BonInterventionController');
+   Route::resource('chargecolla','ChargeCollaController');
+   Route::resource('client','ClientController');
+   Route::resource('collaborateur','CollaborateurController');
+   Route::resource('contact','ContactController');
+   Route::resource('facture','FactureController');
+   Route::resource('modereglement','ModeReglementController');
+});

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CAMEI</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -69,25 +69,50 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Se Déconnecter
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">Se Connecter</a>
+                        <a href="{{ url('/register') }}">S'Enregistrer</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    CAMEI
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <!-- <a href="https://laravel.com/docs">Documentation</a> -->
+                    <!-- <a href="https://laracasts.com">Laracasts</a> -->
+                    <!-- <a href="https://laravel-news.com">News</a> -->
+                    <!-- <a href="https://forge.laravel.com">Forge</a> -->
+                    <!-- <a href="https://github.com/laravel/laravel">GitHub</a> -->
+                    <button class="btn btn-primary" type="button"> DashBoard </button>
+                    	<a href="{{ URL::route('bonintervention.index') }}" class="btn btn-primary"> Bon d'Intervention </a>
+                    	<button class="btn btn-primary" type="button">Devis</button>
+                    	<button class="btn btn-primary" type="button">Suivi de Chantier</button>
+                    	<a href="{{ URL::route('facture.index') }}" class="btn btn-primary"> Factures </a>
+                    	<a href="{{ URL::route('client.index') }}" class="btn btn-primary"> Annuaire Clients </a>
+                    	<a href="{{ URL::route('collaborateur.index') }}" class="btn btn-primary"> Fiche Collaborateurs </a>
+                    	<button class="btn btn-primary" type="button">Stock</button>
+                    	<button class="btn btn-primary" type="button">Recherche</button>
                 </div>
             </div>
         </div>
