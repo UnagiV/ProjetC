@@ -13,12 +13,12 @@
 						{!! $errors->first('Collaborateur_TCa', '<small class="help-block">:message</small>') !!}
 					</div>
 					<div class="form-group {!! $errors->has('Date_In_TCa') ? 'has-error' : '' !!}">
-					  	{!! Form::date('Date_In_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date entrée']) !!}
+					  	{!! Form::date('Date_In_TCa', null, ['class' => 'form-control', 'placeholder' => '','id' => 'datepicker']) !!}
 							{!! $errors->first('Date_In_TCa', '<small class="help-block">:message</small>') !!}
 
 					</div>
           <div class="form-group">
-					  	{!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => 'Date Sortie']) !!}
+					  	{!! Form::date('Date_Out_TCa', null, ['class' => 'form-control', 'placeholder' => '','id' => 'datepicker2']) !!}
 
 					</div>
           <div class="form-group  {!! $errors->has('Acces_TCa') ? 'has-error' : '' !!}">
