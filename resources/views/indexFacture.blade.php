@@ -39,7 +39,9 @@
 					</tr>
 				</thead>
 				<tbody>
+
 					@foreach ($T_Factures as $facture)
+
 						<tr>
 							<!-- <td>{!! $facture->Id_TFCl !!}</td> -->
               <td class="text-primary"><strong>{!! $facture->NFacture_TFCl !!}</strong></td>
@@ -64,6 +66,7 @@
               <td class="text-primary"><strong>{!! round($facture->Total_TTC_TFCl,2 ) !!}</strong></td>
 
 
+
 							<td>{!! link_to_route('facture.show', 'Voir', [$facture->Id_TFCl], ['class' => 'btn btn-success btn-block']) !!}</td>
 							<td>{!! link_to_route('facture.edit', 'Modifier', [$facture->Id_TFCl], ['class' => 'btn btn-warning btn-block']) !!}</td>
 							<td>
@@ -72,6 +75,7 @@
 								{!! Form::close() !!}
 							</td>
 						</tr>
+
 					@endforeach
 	  			</tbody>
 			</table>

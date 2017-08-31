@@ -1,6 +1,17 @@
 @extends('template')
 
 @section('contenu')
+
+    <div class="col-sm-offset-1 col-lg-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Choisissez un client">
+        <span class="input-group-btn">
+      <button class="btn btn-default" type="button">Chercher</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
     <br>
     <div class="col-sm-offset-1 col-sm-10">
     	@if(session()->has('ok'))
@@ -51,7 +62,7 @@
               <td class="text-primary"><strong>{!! $client->Adr_Fact_TCl !!}</strong></td>
               <td class="text-primary"><strong>{!! $client->Tel_TCl !!}</strong></td>
 
-              
+
 
               <!-- <td class="text-primary"><strong>{!! $client->Fax_TCl !!}</strong></td> -->
               <!-- <td class="text-primary"><strong>{!! $client->EMail_TCl !!}</strong></td> -->
