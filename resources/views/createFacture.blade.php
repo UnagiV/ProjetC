@@ -1,6 +1,7 @@
 @extends('template')
 
 @section('contenu')
+
 	<div class="col-sm-offset-4 col-sm-4">
 		<br>
 		<div class="panel panel-primary">
@@ -48,6 +49,7 @@
 					  	{!! Form::text('Acces_TCa', null, ['class' => 'form-control', 'placeholder' => 'Accès']) !!}
 
 					</div> -->
+
 					<div class="form-group {!! $errors->has('Responsable_TCa') ? 'has-error' : '' !!}">Responsable
               <select class="form-control" name="Responsable_TCa">
 								<option selected="selected"  hidden="hidden">Responsable</option>
@@ -74,10 +76,6 @@
           </div>
 
 
-
-
-
-
 					{!! Form::submit('Envoyer', ['class' => 'btn btn-primary pull-right']) !!}
 					{!! Form::close() !!}
 				</div>
@@ -86,5 +84,6 @@
 		<a href="javascript:history.back()" class="btn btn-primary">
 			<span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
 		</a>
+
 	</div>
 @endsection
