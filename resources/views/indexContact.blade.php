@@ -8,7 +8,7 @@
 		@endif
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title">Liste des contcts</h3>
+				<h3 class="panel-title">Liste des contacts</h3>
 			</div>
 			<table class="table">
 				<thead>
