@@ -65,7 +65,7 @@ $( function() {
 } );
 </script>
 	</head>
-<header class="col-sm-offset-2 col-sm-12">
+<header class="col-sm-offset-1 col-sm-12">
 	<br>
 	<a href="{{ url('/') }}" class="btn btn-primary"> Accueil </a>
 	<button class="btn btn-primary" type="button"> DashBoard  </button>

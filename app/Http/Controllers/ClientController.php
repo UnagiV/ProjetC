@@ -12,7 +12,7 @@ class ClientController extends Controller
 {
     protected $clientRepository;
 
-    // pour le screen j'ai mis 5 mais il etait à 10 à la base
+    // indiquer le nombre d'element par page
     protected $nbrPerPage = 5;
 
     public function __construct(ClientRepository $clientRepository)
@@ -26,6 +26,7 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     // Index  affiche tous les éléments d'une table
     public function index()
     {
 
@@ -42,6 +43,7 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     // on utilise la fonction create pour cree un element et l'injester dans un BDD
     public function create()
     {
         $reglement = DB::table('T_Mode_Reglement')->pluck('Des_Mdr');
@@ -54,6 +56,8 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+     // Store nous renvoi vers la page d'accueil automatiquement apres l'envoi
+     //de l'element crée
     public function store(Request $request)
     {
         $client = $this->clientRepository->store($request::all());
@@ -70,6 +74,7 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     //Show permet de voir plus en detail les données d'un element selectionné
     public function show($Id_TCl)
     {
         $client = $this->clientRepository->getById($Id_TCl);
@@ -84,6 +89,7 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     //Edit permet de faire une modification d'un element selectionné
     public function edit($Id_TCl)
     {
       $reglement = DB::table('T_Mode_Reglement')->pluck('Des_Mdr');
@@ -101,6 +107,8 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     // Update nous renvoi vers la page d'accueil automatiquement apres l'envoi
+     //de l'element modifié
     public function update(Request $request, $Id_TCl)
     {
         $this->clientRepository->update($Id_TCl,$request::all());
@@ -114,6 +122,7 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     //Cette fonction permet de supprimer l'element
     public function destroy($Id_TCl)
     {
         $this->clientRepository->destroy($Id_TCl);

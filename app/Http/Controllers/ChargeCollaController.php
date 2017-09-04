@@ -35,7 +35,7 @@ class ChargeCollaController extends Controller
      */
     public function create()
     {
-        return viex ('createCharColl');
+        return view ('createCharColl');
     }
 
     /**
